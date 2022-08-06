@@ -1,0 +1,70 @@
+/*Estilos de botones para redes sociales*/
+a .facesvg {
+   width: 30px;
+   height: 30px;
+   background-color: blue;
+}
+a .instasvg {
+   width: 30px;
+   height: 30px;
+   background-color: orange;
+}
+a .whtsappsvg {
+   width: 30px;
+   height: 30px;
+   background-color: green;
+}
+a .githubsvg {
+   width: 30px;
+   height: 30px;
+   background-color: white;
+}
+#face1 {
+   color: blue;
+   font-family: Arial;
+}
+#inst1 {
+   color: orange;
+   font-family: Arial;
+}
+#whts1 {
+   color: green;
+   font-family: Arial;
+}
+#gthb1 {
+   color: black;
+   font-family: Arial;
+}
+/*FIN de Estilos de botones para redes sociales*/
+
+/*Estilos para letras de Header*/
+#headerCol2 {
+   font-size: 30px;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   color: white;
+}
+/*FIN de Estilos para letras de Header*/
+
+/*Estilo de filas*/
+#fila2{
+   
+}
+/*Fin de Estilo de filas*/
+
+/*Estilo de imagenes*/
+#img2{
+   width:81rem;
+   height:27rem;
+}
+
+/*Fin de estilo de imagenes*/
+
+/*Estilo de formulario para inicio de sesión*/
+#formInicioSesion{
+   width: 20   rem;
+}
+/*Fin del Estilo de formulario para inicio de sesión*/
+
+
+/**/
+/**/
