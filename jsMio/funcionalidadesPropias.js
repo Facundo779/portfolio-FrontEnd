@@ -83,6 +83,7 @@ const validarPassRegistro = (idCbox, idMalrt) => {
     }
 }
 
+
 const datosRequeridos = {
     nombre: false,
     apellido: false,
@@ -94,12 +95,23 @@ const datosRequeridos = {
         if(this.nombre&&this.apellido&&this.nombreDeUsuario&&this.correoElectronico&&this.clave1&&this.clave2){
             alert("Ha completado todos los campos correctamente, seleccione ACEPTAR para enviarlos.");
             bodyRegistro.reset();
+            document.querySelectorAll('.form-check-input').forEach((checkbox)=>{
+                checkbox.classList.remove('iconoValidacion_correcto');
+                checkbox.classList.add('iconoValidacion_neutral');
+            })
         }else{ 
             alert("Debe completar todos los campos para registrarse, seleccione ACEPTAR para completarlo.");
             evento.preventDefault();
         }
     }
 }
+/*
+const limpiarCbox = () => {
+    document.querySelectorAll('.form-check-input').forEach((checkbox)=>{
+        checkbox.classList.remove('iconoValidacion_correcto');
+        checkbox.classList.add('iconoValidacion_neutral');
+    })
+} */
 
 inputs.forEach((input) => {
     input.addEventListener('keyup', validarRegistro);
@@ -109,6 +121,7 @@ inputs.forEach((input) => {
 bodyRegistro.addEventListener('submit', (evento) =>{
     evento.preventDefault();
     datosRequeridos.envioAcorde();
+    //limpiarCbox();
 })
 
 //Modificar CSS
