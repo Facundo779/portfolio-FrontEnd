@@ -73,47 +73,61 @@
                       <!--Inicio del Botón registrarse-->
                      <div class="mt-3"> 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalRegistroUsuario">
                           Registrarse
                         </button>
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="modalRegistroUsuario" tabindex="-1" aria-labelledby="modalRegistroUsuarioLabel" aria-hidden="true">
                           <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-header" style="background-color:orange;">
-                                <h5 class="modal-title" id="exampleModalLabel">Ingrese los datos solicitados</h5>
+                                <h5 class="modal-title" id="modalRegistroUsuarioLabel">Ingrese los datos solicitados</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
-                              <div class="modal-body" style="background-color:black;">
-                                <div class="row"><!--Nombre-->
-                                  <label for="nombre" class="form-label"></label>
-                                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
-                                </div>
-                                <div class="row"><!--Apellido-->
-                                  <label for="apellido" class="form-label"></label>
-                                  <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
-                                </div>
-                                <div class="row"><!--Nombre de Usuario-->
-                                  <label for="nombreDeUsuario" class="form-label"></label>
-                                  <input type="text" class="form-control" id="nombreDeUsuario" name="nombreDeUsuario" placeholder="Nombre de Usuario">
-                                </div>
-                                <div class="row"><!--Correo electrónico-->
-                                  <label for="correoElectronico" class="form-label"></label>
-                                  <input type="text" class="form-control" id="correoElectronico" name="correoElectronico" placeholder="Correo electrónico">
-                                </div>
-                                <div class="row"><!--Contraseña-->
-                                  <label for="clave1" class="form-label"></label>
-                                  <input class="" type="password" class="form-control" id="clave1" name="clave1" placeholder="Contraseña">
-                                </div>    
-                                <div class="row"><!--Comprobar Contraseña-->
-                                  <label for="clave2" class="form-label"></label>
-                                  <input class="" type="password" class="form-control" id="clave2" name="clave2" placeholder="Reitere Contraseña">
-                                </div>    
-                              </div><!--Fin modal-body-->
-                              <div class="modal-footer" style="background-color:rgb(73, 12, 114);">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-success">Crear</button>
-                              </div>
+                              <div class="modal-body" id="modalBodyRegistro" style="background-color:black;">
+                                <form id="formRegistro" action="">
+                                  <div class="row input-group"><!--Nombre-->
+                                      <label for="nombre" class="form-label"></label>
+                                      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+                                      <input class="form-check-input m-3 rounded-circle iconoValidacion_neutral" type="checkbox" id="checkBox1">
+                                      <p id="mnsjAlert1" class="mensajeAtencionOculto" style="color:white;">No usar números ni simbolos</p>
+                                  </div>
+                                  <div class="row input-group"><!--Apellido-->
+                                    <label for="apellido" class="form-label"></label>
+                                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+                                    <input class="form-check-input m-3 rounded-circle iconoValidacion_neutral" type="checkbox" id="checkBox2">
+                                    <p id="mnsjAlert2" class="mensajeAtencionOculto" style="color:white;">No usar números ni simbolos</p>
+                                  </div>
+                                  <div class="row input-group"><!--Nombre de Usuario-->
+                                    <label for="nombreDeUsuario" class="form-label"></label>
+                                    <input type="text" class="form-control" id="nombreDeUsuario" name="nombreDeUsuario" placeholder="Nombre de Usuario">
+                                    <input class="form-check-input m-3 rounded-circle iconoValidacion_neutral" type="checkbox" id="checkBox3">
+                                    <p id="mnsjAlert3" class="mensajeAtencionOculto" style="color:white;">Emplear de 9 a 30 caracteres</p>
+                                  </div>
+                                  <div class="row input-group"><!--Correo electrónico-->
+                                    <label for="correoElectronico" class="form-label"></label>
+                                    <input type="text" class="form-control" id="correoElectronico" name="correoElectronico" placeholder="Correo electrónico">
+                                    <input class="form-check-input m-3 rounded-circle iconoValidacion_neutral" type="checkbox" id="checkBox4">
+                                    <p id="mnsjAlert4" class="mensajeAtencionOculto" style="color:white;">No puede tener espacios</p>
+                                  </div>
+                                  <div class="row input-group"><!--Contraseña-->
+                                    <label for="clave1" class="form-label"></label>
+                                    <input type="password" class="form-control" id="clave1" name="clave1" placeholder="Contraseña">
+                                    <input class="form-check-input m-3 rounded-circle iconoValidacion_neutral" type="checkbox" id="checkBox5">
+                                    <p id="mnsjAlert5" class="mensajeAtencionOculto" style="color:white;">Mínimo de 9 caracteres</p>
+                                  </div>    
+                                  <div class="row input-group"><!--Comprobar Contraseña-->
+                                    <label for="clave2" class="form-label"></label>
+                                    <input type="password" class="form-control" id="clave2" name="clave2" placeholder="Reitere Contraseña">
+                                    <input class="form-check-input m-3 rounded-circle iconoValidacion_neutral" type="checkbox" id="checkBox6">
+                                    <p id="mnsjAlert6" class="mensajeAtencionOculto" style="color:white;">LA CONSTRASEÑA DEBE SER IDÉNTICA. Mínimo de 9 caracteres</p>
+                                  </div>
+                                  </div><!--Fin modal-body-->
+                                  <div class="modal-footer" style="background-color:rgb(73, 12, 114);">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button submit" class="btn btn-success">Crear</button>
+                                  </div>
+                                </form><!--Fin de Formulario Registro-->
                             </div>
                           </div>
                         </div>
@@ -130,6 +144,7 @@
   <section>
       <div class="container" id="container2">
         <div class="row mt-3" id="fila3">
+          <!--Inicio de tarjeta 1-->
           <div class="col-3" id="fila3col1">
                 <div class="card border-primary text-center" id="card1" style="width: 10rem;">
                   <div class="card-header">Acerca de</div>                
@@ -142,18 +157,97 @@
                           <div class="modal-dialog">
                               <div class="modal-content">
                                   <div class="modal-header">
-                                      <h3 class="modal-title" id="exmodallabel">Datos Personales</h3>
+                                      <h3 class="modal-title" id="datosPersonales">Datos Personales</h3>
                                       <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                                   </div>
                                   <div class="modal-body">
-                                    <div class="row" id="fila1ModalAcercaDe">
-                                      <div class="col" id="col1Defila1ModalAcercaDe">
-
+                                    <div class="row mt-3" id="filaNacionalidadModalAcercaDe">
+                                      <div class="col" id="col1DefilaNacionalidadModalAcercaDe">
+                                        <label for="nacionalidad" class="form-label">Nacionalidad: </label> 
                                       </div>
-                                      <div class="col" id="col2Defila1ModalAcercaDe">
-
+                                      <div class="col" id="col2DefilaNacionalidadModalAcercaDe">
+                                        <input type="text" class="form-control" id="nacionalidad" name="nacionalidad">
                                       </div>
-                                    </div><!--Cierre fila1ModalAcercaDe-->
+                                    </div><!--Cierre filaNacionalidadModalAcercaDe-->
+                                    <p><ins>Reside en</ins></p> <!---->
+                                    <div class="row mt-3" id="filaPaisModalAcercaDe">
+                                      <div class="col" id="col1DefilaPaisModalAcercaDe">
+                                        <label for="pais" class="form-label">País: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaPaisModalAcercaDe">
+                                        <input type="text" class="form-control" id="pais" name="pais">
+                                      </div>
+                                    </div><!--Cierre filaPaisModalAcercaDe-->                                    
+                                    <div class="row mt-3" id="filaProvinciaModalAcercaDe">
+                                      <div class="col" id="col1DefilaProvinciaModalAcercaDe">
+                                        <label for="provincia" class="form-label">Provincia: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaProvinciaModalAcercaDe">
+                                        <input type="text" class="form-control" id="provincia" name="provincia">
+                                      </div>
+                                    </div><!--Cierre filaProvinciaModalAcercaDe-->                                    
+                                    <div class="row mt-3" id="filaCiudadModalAcercaDe">
+                                      <div class="col" id="col1DefilaCiudadModalAcercaDe">
+                                        <label for="ciudad" class="form-label">Ciudad: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaCiudadModalAcercaDe">
+                                        <input type="text" class="form-control" id="ciudad" name="ciudad">
+                                      </div>
+                                    </div><!--Cierre filaCiudadModalAcercaDe-->                                    
+                                    <div class="row mt-3" id="filaDirecciónModalAcercaDe">
+                                      <div class="col" id="col1DefilaDirecciónModalAcercaDe">
+                                        <label for="direccion" class="form-label">Dirección: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaDirecciónModalAcercaDe">
+                                        <input type="text" class="form-control" id="direccion" name="direccion">
+                                      </div>
+                                    </div><!--Cierre filaDirecciónModalAcercaDe--> 
+                                    <p><ins>Datos de contacto</ins></p>
+                                    <div class="row mt-3" id="filaTelefonoModalAcercaDe">
+                                      <div class="col" id="col1DefilaTelefonoModalAcercaDe">
+                                        <label for="telefono" class="form-label">Teléfono: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaTelefonoModalAcercaDe">
+                                        <input type="text" class="form-control" id="telefono" name="telefono">
+                                      </div>
+                                    </div><!--Cierre filaTelefonoModalAcercaDe-->                                                                       
+                                    <div class="row mt-3" id="filaMail2ModalAcercaDe">
+                                      <div class="col" id="col1DefilaMail2ModalAcercaDe">
+                                        <label for="email2" class="form-label">Correo electrónico: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaMail2ModalAcercaDe">
+                                        <input type="text" class="form-control" id="email2" name="email2">
+                                      </div>
+                                    </div><!--Cierre filaMail2ModalAcercaDe-->
+                                    <p><ins>Extra</ins></p>
+                                    <div class="row mt-3" id="filaEdadModalAcercaDe">
+                                      <div class="col" id="col1DefilaEdadModalAcercaDe">
+                                        <label for="edad" class="form-label">Edad: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaMail2ModalAcercaDe">
+                                        <input type="text" class="form-control" id="edad" name="edad">
+                                      </div>
+                                    </div><!--Cierre filaEdadModalAcercaDe-->
+                                    <div class="row mt-3" id="filaFechaDeNacimientoModalAcercaDe">
+                                      <div class="col" id="col1DefilaMail2ModalAcercaDe">
+                                        <label for="fechaNacimiento" class="form-label">Fecha De Nacimiento: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaFechaDeNacimientoModalAcercaDe">
+                                        <input type="text" class="form-control" id="fechaNacimiento" name="fechaNacimiento">
+                                      </div>
+                                    </div><!--Cierre filaFechaDeNacimientoModalAcercaDe-->
+                                    <div class="row mt-3" id="filaDocIdentidadModalAcercaDe">
+                                      <div class="col" id="col1DefilaMail2ModalAcercaDe">
+                                        <label for="docIdentidad" class="form-label">Documento de Identidad: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaDocIdentidadModalAcercaDe">
+                                        <input type="text" class="form-control" id="docIdentidad" name="docIdentidad">
+                                      </div>
+                                    </div><!--Cierre filaDocIdentidadModalAcercaDe-->
+                                    <div class="mt-3">
+                                      <label for="datosPertinentes" class="form-label">Incluya aquellos datos que crea pertinentes y cuente brevemente sobre Usted.</label>
+                                      <textarea class="form-control" rows="1" id="datosPertinentes" name="datosPertinentes"></textarea>
+                                    </div><!--Cierre del área de texto1-->                                                                       
                                   </div> <!--Cierre ModalBody-->
                                   <div class="modal-footer">
                                       <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>
@@ -164,16 +258,135 @@
                   </div><!--Cierre Body card-->
               </div> <!--Cierre Tarjeta 1 ACERCA DE..-->
           </div><!--Cierre fila3col1-->
+          <!--Inicio de tarjeta 2-->
           <div class="col-3" id="fila3col2">
-
+            <div class="card border-primary text-center" id="card1" style="width: 10rem;">
+              <div class="card-header">Experiencia</div>                
+              <img src="imagenes_frontend/" class="card-img-top">
+              <div class="card-body">
+                  <h4 class="card-title">...</h4>
+                  <p class="card-text">...</p>
+                  <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalExperiencia">Ver más...</a>
+                  <div class="modal fade" id="modalExperiencia">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h3 class="modal-title" id="trabajosDesempeñados">Trabajos en los cuales me he desempeñado</h3>
+                                  <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
+                              </div>
+                              <div class="modal-body">
+                                <button class="btn btn-primary" id="btnAgregarTrabajo">
+                                  Agregar trabajo
+                                </button>
+                                <template id="templateLaboral">
+                                  <div class="row" id="fila1ModalExperiencia">
+                                    <div class="col" id="col1Defila1ModalExperiencia">
+                                      <label for="nacionalidad" class="form-label">Nacionalidad: </label> 
+                                    </div>
+                                    <div class="col" id="col2Defila1ModalExperiencia">
+                                      <input type="text" class="form-control" id="nacionalidad" name="nacionalidad">
+                                    </div>
+                                  </div><!--Cierre fila1ModalExperiencia-->
+                                </template>
+                              </div> <!--Cierre ModalBody-->
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div><!--Cierre modalExperiencia-->
+              </div><!--Cierre Body card-->
+          </div> <!--Cierre Tarjeta 1 EXPERIENCIA..-->
           </div><!--Cierre fila3col2-->
+          <!--Inicio de tarjeta 3-->
           <div class="col-3" id="fila3col3">
-
+            <div class="card border-primary text-center" id="card2" style="width: 10rem;">
+              <div class="card-header">Educación</div>                
+              <img src="imagenes_frontend/" class="card-img-top">
+              <div class="card-body">
+                  <h4 class="card-title">...</h4>
+                  <p class="card-text">...</p>
+                  <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEducacion">Ver más...</a>
+                  <div class="modal fade" id="modalEducacion">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h3 class="modal-title" id="titulosObtenidos">Títulos que has obtenido</h3>
+                                  <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
+                              </div>
+                              <div class="modal-body">
+                                <div class="row" id="fila1ModalEducacion">
+                                  <div class="col" id="col1Defila1ModalEducacion">
+                                    <label for="nacionalidad" class="form-label">...: </label> 
+                                  </div>
+                                  <div class="col" id="col2Defila1ModalEducacion">
+                                    <input type="text" class="form-control" id="nacionalidad" name="nacionalidad">
+                                  </div>
+                                </div><!--Cierre fila1ModalEducacion-->
+                                <div class="row" id="fila2ModalEducacion">
+                                  <div class="col" id="col1Defila2ModalEducacion">
+                                    <label for="pais" class="form-label">...: </label> 
+                                  </div>
+                                  <div class="col" id="col2Defila2ModalEducacion">
+                                    <input type="text" class="form-control" id="pais" name="pais">
+                                  </div>
+                                </div><!--Cierre fila2ModalEducacion-->                                    
+                              </div> <!--Cierre ModalBody-->
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div><!--Cierre modalEducacion-->
+              </div><!--Cierre Body card-->
+          </div> <!--Cierre Tarjeta 3 EDUCACIÓN..-->
           </div><!--Cierre fila3col3-->
+          <!--Inicio de tarjeta 4-->
           <div class="col-3" id="fila3col4">
-
+            <div class="card border-primary text-center" id="card3" style="width: 10rem;">
+              <div class="card-header">Proyectos</div>                
+              <img src="imagenes_frontend/" class="card-img-top">
+              <div class="card-body">
+                  <h4 class="card-title">...</h4>
+                  <p class="card-text">...</p>
+                  <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProyectos">Ver más...</a>
+                  <div class="modal fade" id="modalProyectos">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h3 class="modal-title" id="proyectos">Proyectos</h3>
+                                  <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
+                              </div>
+                              <div class="modal-body">
+                                <div class="row" id="fila1ModalProyectos">
+                                  <div class="col" id="col1Defila1ModalProyectos">
+                                    <label for="nacionalidad" class="form-label">...: </label> 
+                                  </div>
+                                  <div class="col" id="col2Defila1ModalProyectos">
+                                    <input type="text" class="form-control" id="nacionalidad" name="nacionalidad">
+                                  </div>
+                                </div><!--Cierre fila1ModalProyectos-->
+                                <!---->
+                                <div class="row" id="fila2ModalProyectos">
+                                  <div class="col" id="col1Defila2ModalProyectos">
+                                    <label for="pais" class="form-label">País: </label> 
+                                  </div>
+                                  <div class="col" id="col2Defila2ModalProyectos">
+                                    <input type="text" class="form-control" id="pais" name="pais">
+                                  </div>
+                                </div><!--Cierre fila2ModalProyectos-->                                    
+                              </div> <!--Cierre ModalBody-->
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div><!--Cierre modalProyectos-->
+              </div><!--Cierre Body card-->
+          </div> <!--Cierre Tarjeta 4 PROYECTOS..-->
           </div><!--Cierre fila3col4-->
         </div><!--Cierre Fila 3-->
+        <!---->
         <div class="row" id="fila4">
           <div class="col"></div>
         </div>
@@ -182,6 +395,7 @@
   <footer>
 
   </footer>
+    <script src="jsMio/funcionalidadesPropias.js" type="text/javascript"></script>
     <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
 </body>
 </html>
