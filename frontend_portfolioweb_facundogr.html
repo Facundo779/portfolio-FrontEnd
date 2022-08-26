@@ -43,19 +43,20 @@
            
                 <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2" id="headerCol5" style="">
                         <!--Dropdown form e inicio de sesión-->
-                        <div class="dropdown">
-                          <button type="button" class="btn btn-success rounded-pill dropdown-toggle m-3" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                            Iniciar Sesión
+                        <div class="inicioSesionDropDown">
+                          <button type="button" class="btn_InicioSesion btn btn-success rounded-pill dropdown-toggle m-3" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                            <img src="img_bootstrap/shield-lock.svg"> 
                           </button>
-                          <form class="dropdown-menu p-4" id="formInicioSesion">
+                          <form class="dropdown-menu p-4" style="width: 30rem;" id="formInicioSesion" action="">
                             <div class="mb-3">
                               <label for="formularioInicioDeSesionMail" class="form-label">Correo electrónico o Usuario</label>
-                              <input type="email" class="form-control" id="formularioInicioDeSesionMail" placeholder="Escriba su Email o Usuario: ">
+                              <input type="text" class="form-control" id="formularioInicioDeSesionMail_Usuario" name="emailOusuario" placeholder="Escriba su Email o Usuario: ">
                             </div>
                             <div class="mb-3">
                               <label for="formularioInicioDeSesionPass" class="form-label">Contraseña</label>
-                              <input type="password" class="form-control" id="formularioInicioDeSesionPass" placeholder="Escriba aquí su Contraseña: ">
+                              <input type="password" class="form-control" id="formularioInicioDeSesionPass" name="passInicioSesion" placeholder="Escriba aquí su Contraseña: ">
                             </div>
+                            <!--
                             <div class="mb-3">
                               <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="dropdownCheck2">
@@ -64,7 +65,8 @@
                                 </label>
                               </div>
                             </div>
-                            <p>Para iniciar sesión debés registrarte</p>
+                            -->
+                            <p>Para iniciar sesión debe registrarse</p>
                             <button type="submit" class="btn btn-primary">Iniciar</button>
                           </form>
                       </div><!--Fin del dropdown form e Inicio de sesión-->
@@ -73,14 +75,14 @@
                       <!--Inicio del Botón registrarse-->
                      <div class="mt-3"> 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalRegistroUsuario">
-                          Registrarse
+                        <button type="button" class="btn_Registro btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalRegistroUsuario">
+                          <img src="img_bootstrap/list-check.svg">
                         </button>
                         <!-- Modal -->
                         <div class="modal fade" id="modalRegistroUsuario" tabindex="-1" aria-labelledby="modalRegistroUsuarioLabel" aria-hidden="true">
                           <div class="modal-dialog">
                             <div class="modal-content">
-                              <div class="modal-header" style="background-color:orange;">
+                              <div class="modal-header" style="">
                                 <h5 class="modal-title" id="modalRegistroUsuarioLabel">Ingrese los datos solicitados</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
@@ -123,7 +125,7 @@
                                     <p id="mnsjAlert6" class="mensajeAtencionOculto" style="color:white;">LA CONSTRASEÑA DEBE SER IDÉNTICA. Mínimo de 9 caracteres</p>
                                   </div>
                                   </div><!--Fin modal-body-->
-                                  <div class="modal-footer" style="background-color:rgb(73, 12, 114);">
+                                  <div class="modal-footer" style="">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                                     <button type="button submit" class="btn btn-success">Crear</button>
                                   </div>
@@ -143,9 +145,12 @@
   </header> 
   <section>
       <div class="container" id="container2">
+        <div class="row mt-3 col-6 offset-3" id="cerrarSesion">
+          <button class="cerrarSesion botonEdicionOculto btn-warning" type="button" id="cerrarSesion" name="botonEditar"><img src="img_bootstrap/file-earmark-lock.svg"></button>
+        </div>
         <div class="row mt-3" id="fila3">
           <!--Inicio de tarjeta 1-->
-          <div class="col-3" id="fila3col1">
+          <div class="col-3 tarjetaCvActivo" id="fila3col1" name="tarjetaCv">
                 <div class="card border-primary text-center" id="card1" style="width: 10rem;">
                   <div class="card-header">Acerca de</div>                
                   <img src="imagenes_frontend/seudofotoperfil.png" class="card-img-top">
@@ -158,15 +163,39 @@
                               <div class="modal-content">
                                   <div class="modal-header">
                                       <h3 class="modal-title" id="datosPersonales">Datos Personales</h3>
+                                      <button class="botonEditar botonEdicionActivo" type="button" id="editarDatosPersonales" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
                                       <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                                   </div>
                                   <div class="modal-body">
+                                    <div class="row mt-3" id="filaNombreCompletoModalAcercaDe">
+                                      <div class="col" id="col1DefilaNombreCompletoModalAcercaDe">
+                                        <label for="nombreCompleto" class="form-label">Nombre Completo: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaNombreCompletoModalAcercaDe">
+                                        <input type="text" class="form-control" id="inputDatosPersonales" name="nombreCompleto" disabled placeholder="complete aquí">
+                                      </div>
+                                    </div><!--Cierre filaNombreCompletoModalAcercaDe-->
+                                    <div class="row mt-3" id="filaTituloModalAcercaDe">
+                                      <div class="col" id="col1DefilaNacionalidadModalAcercaDe">
+                                        <label for="titulo" class="form-label">Título: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaTituloModalAcercaDe">
+                                        <input type="text" class="form-control" id="inputDatosPersonales" name="titulo" disabled placeholder="complete aquí">
+                                      </div>
+                                    </div><!--Cierre filaTituloModalAcercaDe-->
+                                    <div class="row mt-3" id="filaTituloModalAcercaDe">
+                                      <div class="col" id="col2DefilaFotoPerfilModalAcercaDe">
+                                        <label for="fotoPerfil" class="form-label">Adjunte su foto de perfil:</label>
+                                        <input type="file" class="form-control" id="inputDatosPersonales" name="fotoPerfil" disabled>
+                                      </div>
+                                    </div><!--Cierre filaFotoPerfilModalAcercaDe-->
+                                    
                                     <div class="row mt-3" id="filaNacionalidadModalAcercaDe">
                                       <div class="col" id="col1DefilaNacionalidadModalAcercaDe">
                                         <label for="nacionalidad" class="form-label">Nacionalidad: </label> 
                                       </div>
                                       <div class="col" id="col2DefilaNacionalidadModalAcercaDe">
-                                        <input type="text" class="form-control" id="nacionalidad" name="nacionalidad">
+                                        <input type="text" class="form-control" id="inputDatosPersonales" name="nacionalidad" disabled placeholder="complete aquí">
                                       </div>
                                     </div><!--Cierre filaNacionalidadModalAcercaDe-->
                                     <p><ins>Reside en</ins></p> <!---->
@@ -175,7 +204,7 @@
                                         <label for="pais" class="form-label">País: </label> 
                                       </div>
                                       <div class="col" id="col2DefilaPaisModalAcercaDe">
-                                        <input type="text" class="form-control" id="pais" name="pais">
+                                        <input type="text" class="form-control" id="inputDatosPersonales" name="pais" disabled placeholder="complete aquí">
                                       </div>
                                     </div><!--Cierre filaPaisModalAcercaDe-->                                    
                                     <div class="row mt-3" id="filaProvinciaModalAcercaDe">
@@ -183,7 +212,7 @@
                                         <label for="provincia" class="form-label">Provincia: </label> 
                                       </div>
                                       <div class="col" id="col2DefilaProvinciaModalAcercaDe">
-                                        <input type="text" class="form-control" id="provincia" name="provincia">
+                                        <input type="text" class="form-control" id="inputDatosPersonales" name="provincia" disabled placeholder="complete aquí">
                                       </div>
                                     </div><!--Cierre filaProvinciaModalAcercaDe-->                                    
                                     <div class="row mt-3" id="filaCiudadModalAcercaDe">
@@ -191,7 +220,7 @@
                                         <label for="ciudad" class="form-label">Ciudad: </label> 
                                       </div>
                                       <div class="col" id="col2DefilaCiudadModalAcercaDe">
-                                        <input type="text" class="form-control" id="ciudad" name="ciudad">
+                                        <input type="text" class="form-control" id="inputDatosPersonales" name="ciudad" disabled placeholder="complete aquí">
                                       </div>
                                     </div><!--Cierre filaCiudadModalAcercaDe-->                                    
                                     <div class="row mt-3" id="filaDirecciónModalAcercaDe">
@@ -199,7 +228,7 @@
                                         <label for="direccion" class="form-label">Dirección: </label> 
                                       </div>
                                       <div class="col" id="col2DefilaDirecciónModalAcercaDe">
-                                        <input type="text" class="form-control" id="direccion" name="direccion">
+                                        <input type="text" class="form-control" id="inputDatosPersonales" name="direccion" disabled placeholder="complete aquí">
                                       </div>
                                     </div><!--Cierre filaDirecciónModalAcercaDe--> 
                                     <p><ins>Datos de contacto</ins></p>
@@ -208,7 +237,7 @@
                                         <label for="telefono" class="form-label">Teléfono: </label> 
                                       </div>
                                       <div class="col" id="col2DefilaTelefonoModalAcercaDe">
-                                        <input type="text" class="form-control" id="telefono" name="telefono">
+                                        <input type="text" class="form-control" id="inputDatosPersonales" name="telefono" disabled placeholder="complete aquí">
                                       </div>
                                     </div><!--Cierre filaTelefonoModalAcercaDe-->                                                                       
                                     <div class="row mt-3" id="filaMail2ModalAcercaDe">
@@ -216,7 +245,7 @@
                                         <label for="email2" class="form-label">Correo electrónico: </label> 
                                       </div>
                                       <div class="col" id="col2DefilaMail2ModalAcercaDe">
-                                        <input type="text" class="form-control" id="email2" name="email2">
+                                        <input type="text" class="form-control" id="inputDatosPersonales" name="email2" disabled placeholder="complete aquí">
                                       </div>
                                     </div><!--Cierre filaMail2ModalAcercaDe-->
                                     <p><ins>Extra</ins></p>
@@ -225,7 +254,7 @@
                                         <label for="edad" class="form-label">Edad: </label> 
                                       </div>
                                       <div class="col" id="col2DefilaMail2ModalAcercaDe">
-                                        <input type="text" class="form-control" id="edad" name="edad">
+                                        <input type="text" class="form-control" id="inputDatosPersonales" name="edad" disabled placeholder="complete aquí">
                                       </div>
                                     </div><!--Cierre filaEdadModalAcercaDe-->
                                     <div class="row mt-3" id="filaFechaDeNacimientoModalAcercaDe">
@@ -233,7 +262,7 @@
                                         <label for="fechaNacimiento" class="form-label">Fecha De Nacimiento: </label> 
                                       </div>
                                       <div class="col" id="col2DefilaFechaDeNacimientoModalAcercaDe">
-                                        <input type="text" class="form-control" id="fechaNacimiento" name="fechaNacimiento">
+                                        <input type="text" class="form-control" id="inputDatosPersonales" name="fechaNacimiento" disabled placeholder="complete aquí">
                                       </div>
                                     </div><!--Cierre filaFechaDeNacimientoModalAcercaDe-->
                                     <div class="row mt-3" id="filaDocIdentidadModalAcercaDe">
@@ -241,12 +270,12 @@
                                         <label for="docIdentidad" class="form-label">Documento de Identidad: </label> 
                                       </div>
                                       <div class="col" id="col2DefilaDocIdentidadModalAcercaDe">
-                                        <input type="text" class="form-control" id="docIdentidad" name="docIdentidad">
+                                        <input type="text" class="form-control" id="inputDatosPersonales" name="docIdentidad" disabled placeholder="complete aquí">
                                       </div>
                                     </div><!--Cierre filaDocIdentidadModalAcercaDe-->
                                     <div class="mt-3">
                                       <label for="datosPertinentes" class="form-label">Incluya aquellos datos que crea pertinentes y cuente brevemente sobre Usted.</label>
-                                      <textarea class="form-control" rows="1" id="datosPertinentes" name="datosPertinentes"></textarea>
+                                      <textarea class="form-control" rows="1" id="inputDatosPersonales" name="datosPertinentes" disabled placeholder="complete aquí"></textarea>
                                     </div><!--Cierre del área de texto1-->                                                                       
                                   </div> <!--Cierre ModalBody-->
                                   <div class="modal-footer">
@@ -259,7 +288,7 @@
               </div> <!--Cierre Tarjeta 1 ACERCA DE..-->
           </div><!--Cierre fila3col1-->
           <!--Inicio de tarjeta 2-->
-          <div class="col-3" id="fila3col2">
+          <div class="col-3 tarjetaCvActivo" id="fila3col2" name="tarjetaCv">
             <div class="card border-primary text-center" id="card1" style="width: 10rem;">
               <div class="card-header">Experiencia</div>                
               <img src="imagenes_frontend/" class="card-img-top">
@@ -272,6 +301,7 @@
                           <div class="modal-content">
                               <div class="modal-header">
                                   <h3 class="modal-title" id="trabajosDesempeñados">Trabajos en los cuales me he desempeñado</h3>
+                                  <button class="botonEditar botonEdicionOculto" type="button" id="editarExperiencia" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
                                   <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                               </div>
                               <div class="modal-body">
@@ -299,7 +329,7 @@
           </div> <!--Cierre Tarjeta 1 EXPERIENCIA..-->
           </div><!--Cierre fila3col2-->
           <!--Inicio de tarjeta 3-->
-          <div class="col-3" id="fila3col3">
+          <div class="col-3 tarjetaCvActivo" id="fila3col3" name="tarjetaCv">
             <div class="card border-primary text-center" id="card2" style="width: 10rem;">
               <div class="card-header">Educación</div>                
               <img src="imagenes_frontend/" class="card-img-top">
@@ -311,7 +341,8 @@
                       <div class="modal-dialog">
                           <div class="modal-content">
                               <div class="modal-header">
-                                  <h3 class="modal-title" id="titulosObtenidos">Títulos que has obtenido</h3>
+                                  <h3 class="modal-title" id="titulosObtenidos">Títulos que he obtenido</h3>
+                                  <button class="botonEditar botonEdicionOculto" type="button" id="editarTitulos" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
                                   <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                               </div>
                               <div class="modal-body">
@@ -342,7 +373,7 @@
           </div> <!--Cierre Tarjeta 3 EDUCACIÓN..-->
           </div><!--Cierre fila3col3-->
           <!--Inicio de tarjeta 4-->
-          <div class="col-3" id="fila3col4">
+          <div class="col-3 tarjetaCvActivo" id="fila3col4" name="tarjetaCv">
             <div class="card border-primary text-center" id="card3" style="width: 10rem;">
               <div class="card-header">Proyectos</div>                
               <img src="imagenes_frontend/" class="card-img-top">
@@ -355,6 +386,7 @@
                           <div class="modal-content">
                               <div class="modal-header">
                                   <h3 class="modal-title" id="proyectos">Proyectos</h3>
+                                  <button class="botonEditar botonEdicionOculto" type="button" id="editarProyectos" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
                                   <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                               </div>
                               <div class="modal-body">

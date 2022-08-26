@@ -124,4 +124,90 @@ bodyRegistro.addEventListener('submit', (evento) =>{
     //limpiarCbox();
 })
 
-//Modificar CSS
+//Iniciar Sesión
+const formularioInicioSesion = document.getElementById('formInicioSesion');
+const inputsInicioSesion = document.querySelectorAll('#formInicioSesion input');
+const mailValidacion = "dir@correo.com";
+const nombreUsuarioValidacion = "Pila";
+const passValidacion = "369";
+const arrayBotonEditar = document.getElementsByName('botonEditar');
+
+const validarInicioSesion = {
+    mail: false,
+    pass: false,
+    validandoInicioSesion: function (){
+        const usuarioOmailIngresado = document.getElementById('formularioInicioDeSesionMail_Usuario');
+        const claveInicioSesionIngresada = document.getElementById('formularioInicioDeSesionPass');
+        if(usuarioOmailIngresado.value===mailValidacion ||usuarioOmailIngresado.value===nombreUsuarioValidacion && claveInicioSesionIngresada.value===passValidacion){
+            validarInicioSesion.mail = true;
+            validarInicioSesion.pass = true;
+            }else{
+                alert("Su nombre de usuario o contraseña es incorrecto");
+            } 
+    },
+    habilitarEdicion: function () {
+       //const arrayTarjetaCv = document.getElementsByName('tarjetaCv');
+        if(this.mail&&this.pass){
+            arrayBotonEditar.forEach(elementBoton => elementBoton.classList.replace('botonEdicionOculto', 'botonEdicionActivo'));
+            //[FUNCIONA CORRECTAMENTE LA SIGUIENTE LINEA]arrayTarjetaCv.forEach(elementTarjeta => elementTarjeta.classList.replace('tarjetaCvOculto', 'tarjetaCvActivo'));
+            //[FUNCIONA CORRECTAMENTE LA SIGUIENTE LINEA]arrayTarjetaCv.forEach(elementTarjeta=> console.log(elementTarjeta));
+            
+            
+            //arrayBotonEditar.forEach(element=> console.log(element));
+            /*
+            document.getElementsByName('botonEditar')[0].classList.replace('botonEdicionOculto', 'botonEdicionActivo');
+            document.getElementsByName('botonEditar')[1].classList.replace('botonEdicionOculto', 'botonEdicionActivo');
+            document.getElementsByName('botonEditar')[2].classList.replace('botonEdicionOculto', 'botonEdicionActivo');
+            document.getElementsByName('botonEditar')[3].classList.replace('botonEdicionOculto', 'botonEdicionActivo');
+            document.getElementsByName('botonEditar')[4].classList.replace('botonEdicionOculto', 'botonEdicionActivo');
+            document.getElementsByName('tarjetaCv').forEach([`${arrayTarjetaCv}`]).classList.replace('botonEdicionOculto', 'botonEdicionActivo');
+           */
+            alert("Se ha habilitado la edición del Currriculum");
+        }else{
+            
+        }
+    }
+}
+
+formularioInicioSesion.addEventListener("submit", (e_sesion) => {
+        e_sesion.preventDefault();
+        validarInicioSesion.validandoInicioSesion();
+        validarInicioSesion.habilitarEdicion();
+        formularioInicioSesion.reset();
+        document.getElementById('formInicioSesion').classList.replace('show','formDropdownOculto');
+    })
+
+/*Botón Cerrar Sesión*/
+document.getElementById('cerrarSesion').addEventListener('click', (e_sesionClose) => {
+    
+    const cerrarSesionRespuestaUsuario = prompt("Está por cerrar sesión...Si desea cerrarla presione: - s - sino - n -");
+    if(cerrarSesionRespuestaUsuario==="s"){
+        arrayBotonEditar.forEach(elementBoton => elementBoton.classList.replace('botonEdicionActivo', 'botonEdicionOculto'));
+        document.getElementById('formInicioSesion').classList.remove('formDropdownOculto');
+    }else if (cerrarSesionRespuestaUsuario==="n"){
+        alert('Puede seguir editando el Curriculum');
+    }else{
+        alert('Ha oprimido cualquier tecla...intentelo nuevamente. s=Si y n=NO');
+    }
+    
+})
+
+
+/*Editar campos*/
+ const editDatosPersonal = document.getElementById('editarDatosPersonales');
+
+ const edicionAcercaDe = (acercaDe) => {
+    const nombreCompletoPortadaTarjeta = document.getElementsByClassName('.card-title');
+    const tituloProfesionalPortadaTarjeta = document.getElementsByClassName('.card-text');
+    const nombreCompletoInTarjeta = document.getElementByName('nombreCompleto');
+    const tituloInTarjeta = document.getElementByName('titulo');
+    const fotoPerfilInTarjeta = document.getElementByName('fotoPerfil');
+ }
+
+ editDatosPersonal.addEventListener('click', (acercaDe) =>{
+
+})
+
+
+
+/*Templates*/ 

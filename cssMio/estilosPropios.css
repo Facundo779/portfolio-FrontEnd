@@ -63,9 +63,19 @@ a .githubsvg {
 #formInicioSesion{
    width: 20   rem;
 }
+.btn_InicioSesion:hover::before{
+   content: "Iniciar Sesión";
+   white-space: nowrap;
+   margin-left: 3%;
+}
 /*Fin del Estilo de formulario para inicio de sesión*/
 
 /*Estilos para checks en Registro de Usuario*/
+.btn_Registro:hover::after{
+   content: "Registrarse";
+   white-space: nowrap;
+   margin-left:;
+}
 .iconoValidacion_correcto{
    background-color: green;
    border-color: green;
@@ -94,5 +104,59 @@ a .githubsvg {
 .mensajeAtencionActivo{
    display:block;
 }
+
+/*Modals del curriculum*/
+.tarjetaCvOculto{
+   display:none;
+}
+.tarjetaCvActivo{
+   display:block;
+}
+/*Botones de edición*/
+.botonEdicionOculto{
+   display:none;
+}
+.botonEdicionActivo{
+   display:block;
+}
+.formDropdownOculto{
+   display:none;
+}
+.formDropdownActivo{
+   display:block;
+}
+.cerrarSesion:hover::after{
+   content: "Cerrar Sesión";
+   white-space: nowrap;
+   margin-left: 3%;
+   
+}
+.botonEditar:hover::after{
+   content: "Editar sección";
+   white-space: nowrap;
+   margin-left: 3%;
+   
+}
+
+/*Estilos de modals*/
+.modal-header{
+   background-color: orange;
+}
+.modal-footer{
+   background-color: rgb(73, 12, 114);
+}
+#inputDatosPersonales{
+   background-color: white;
+}
+/**/  
+/**/  
+/**/  
+/**/  
+/**/  
+/**/  
+/**/  
+/**/  
+/**/  
+/**/  
 /**/  
 /**/
