@@ -35,6 +35,11 @@ a .githubsvg {
    color: black;
    font-family: Arial;
 }
+.btn_RedesSociales:hover::before{
+   content: "Redes Sociales";
+   white-space: nowrap;
+   margin-left: 3%;
+}
 /*FIN de Estilos de botones para redes sociales*/
 
 /*Estilos para letras de Header*/
@@ -137,6 +142,14 @@ a .githubsvg {
    margin-left: 3%;
    
 }
+/*Edición del contenido de las tarjetas*/
+.inputEdicionDeSeccionesOculto{
+   display:none;
+}
+.inputEdicionDeSeccionesActivo{
+   display:block;
+}
+
 
 /*Estilos de modals*/
 .modal-header{

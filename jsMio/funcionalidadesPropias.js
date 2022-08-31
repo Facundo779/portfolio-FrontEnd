@@ -182,8 +182,13 @@ document.getElementById('cerrarSesion').addEventListener('click', (e_sesionClose
     
     const cerrarSesionRespuestaUsuario = prompt("Está por cerrar sesión...Si desea cerrarla presione: - s - sino - n -");
     if(cerrarSesionRespuestaUsuario==="s"){
+        //inputsDatosPersonales.forEach(elementoInput=> elementoInput.setAttribute('disabled', ''));
         arrayBotonEditar.forEach(elementBoton => elementBoton.classList.replace('botonEdicionActivo', 'botonEdicionOculto'));
         document.getElementById('formInicioSesion').classList.remove('formDropdownOculto');
+        document.querySelector('[name="fotoPerfil"]').setAttribute('disabled', '');
+        inputsDatosPersonales.forEach(inputDPersonal=>inputDPersonal.classList.replace('border-primary', 'border-dark'));
+        botonesEdicion[this.edicionHabilitada]= false,
+        alert('Ha cerrado la sesión y ya no es posible editar el Curriculum');
     }else if (cerrarSesionRespuestaUsuario==="n"){
         alert('Puede seguir editando el Curriculum');
     }else{
@@ -195,19 +200,86 @@ document.getElementById('cerrarSesion').addEventListener('click', (e_sesionClose
 
 /*Editar campos*/
  const editDatosPersonal = document.getElementById('editarDatosPersonales');
-
- const edicionAcercaDe = (acercaDe) => {
-    const nombreCompletoPortadaTarjeta = document.getElementsByClassName('.card-title');
+ const nombreCompletoPortadaTarjeta = document.getElementsByClassName('.card-title');
+ const tituloProfesionalPortadaTarjeta = document.getElementsByClassName('.card-text');
+ const inputsDatosPersonales = document.querySelectorAll('#inputDatosPersonales');
+ 
+   /* const nombreCompletoPortadaTarjeta = document.getElementsByClassName('.card-title');
     const tituloProfesionalPortadaTarjeta = document.getElementsByClassName('.card-text');
-    const nombreCompletoInTarjeta = document.getElementByName('nombreCompleto');
-    const tituloInTarjeta = document.getElementByName('titulo');
-    const fotoPerfilInTarjeta = document.getElementByName('fotoPerfil');
+    const inputsDatosPersonales = querySelectorAll('#inputDatosPersonales');*/ //LOS PUSE FUERA DE LA FUNCION
+ 
+ const botonesEdicion = {
+    edicionHabilitada: false,
+    habilitarCamposDatosPersonales: function(){
+        inputsDatosPersonales.forEach(inputDPersonal=>inputDPersonal.classList.replace('border-dark', 'border-primary'));
+        document.querySelector('[name="fotoPerfil"]').removeAttribute('disabled');
+        this.edicionHabilitada= true;
+    },
+    campoAModificar: function(target_name){
+        document.querySelector(`[name="${target_name}"]`).textContent=prompt('');
+    },
+    inputNuevosDatosPersonales: function(){
+        if(this.edicionHabilitada){
+            switch (seleccion){
+                case "nombreCompleto":
+                    botonesEdicion.campoAModificar(seleccion);
+                break;    
+                case "titulo":
+                    botonesEdicion.campoAModificar(seleccion);
+                break;    
+                case "nacionalidad":
+                    botonesEdicion.campoAModificar(seleccion);
+                break;    
+                case "pais":
+                    botonesEdicion.campoAModificar(seleccion);
+                break;    
+                case "provincia":
+                    botonesEdicion.campoAModificar(seleccion);
+                break;    
+                case "ciudad":
+                    botonesEdicion.campoAModificar(seleccion);
+                break;    
+                case "direccion":
+                    botonesEdicion.campoAModificar(seleccion);
+                break;    
+                case "telefono":
+                    botonesEdicion.campoAModificar(seleccion);
+                break;    
+                case "email2":
+                    botonesEdicion.campoAModificar(seleccion);
+                break;    
+                case "edad":
+                    botonesEdicion.campoAModificar(seleccion);
+                break;    
+                case "fechaNacimiento":
+                    botonesEdicion.campoAModificar(seleccion);
+                break;    
+                case "docIdentidad":
+                    botonesEdicion.campoAModificar(seleccion);
+                break;
+                case "datosPertinentes":
+                    botonesEdicion.campoAModificar(seleccion);
+                break;    
+            }
+        }else{
+            alert('Debe hacer click en el botón de editar sección para modificar los campos');
+        }
+    }  
  }
 
- editDatosPersonal.addEventListener('click', (acercaDe) =>{
+ editDatosPersonal.addEventListener('click', () =>{
+    botonesEdicion.habilitarCamposDatosPersonales();
+    //inputsDatosPersonales.forEach(elementoInput=> elementoInput.removeAttribute('disabled'));
+    // document.querySelector('[name="nombreCompleto"]').setAttribute('placeholder', prompt('Ingrese su nombre'));
+    //document.querySelectorAll('#inputDatosPersonales').forEach(elementoInput=> elementoInput.removeAttribute('disabled'));
 
 })
-
-
+var seleccion = null;
+inputsDatosPersonales.forEach(nuevoDato=>nuevoDato.addEventListener("click", () => {
+    seleccion = nuevoDato.getAttribute('name');
+    botonesEdicion.inputNuevosDatosPersonales();
+    //seleccion= inputsDatosPersonales[0].getAttribute('name');
+    //botonesEdicion.inputNuevosDatosPersonales();
+}))
 
 /*Templates*/ 
