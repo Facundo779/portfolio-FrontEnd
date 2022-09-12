@@ -163,7 +163,7 @@
                               <div class="modal-content">
                                   <div class="modal-header">
                                       <h3 class="modal-title" id="datosPersonales">Datos Personales</h3>
-                                      <button class="botonEditar botonEdicionActivo" type="button" id="editarDatosPersonales" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
+                                      <button class="botonEditar botonEdicionOculto" type="button" id="editarDatosPersonales" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
                                       <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                                   </div>
                                   <div class="modal-body">
@@ -305,23 +305,66 @@
                                   <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                               </div>
                               <div class="modal-body">
-                                <button class="btn btn-primary" id="btnAgregarTrabajo">
-                                  Agregar trabajo
-                                </button>
-                                <template id="templateLaboral">
-                                  <div class="row" id="fila1ModalExperiencia">
-                                    <div class="col" id="col1Defila1ModalExperiencia">
-                                      <label for="nacionalidad" class="form-label">Nacionalidad: </label> 
+                                
+                               <!-- <template id="templateLaboral"> -->
+                                  <div class="border rounded p-1 border-warning" id="templateLaboral" name="templateLaboral1">
+                                    <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoLaboral" type="button" id="botonsaberSiEliminoSegmentoLaboral"> X</button>
+                                    <div class="row" id="filaModalExperiencia">
+                                      <div class="col" id="col1DefilaModalExperiencia">
+                                        <label for="empresa" class="form-label">Empresa: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaModalExperiencia">
+                                        <p class="text border rounded-end border-dark" id="empresa" name="empresa">Complete aquí</p>
+                                      </div>
                                     </div>
-                                    <div class="col" id="col2Defila1ModalExperiencia">
-                                      <input type="text" class="form-control" id="nacionalidad" name="nacionalidad">
+                                    <div class="row" id="filaModalExperiencia">
+                                      <div class="col" id="col1DefilaModalExperiencia">
+                                        <label for="tarea" class="form-label">Tarea: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaModalExperiencia">
+                                        <p class="text border rounded-end border-dark" id="tarea" name="tarea">Complete aquí</p>
+                                      </div>
                                     </div>
-                                  </div><!--Cierre fila1ModalExperiencia-->
-                                </template>
+                                    <div class="row" id="filaModalExperiencia">
+                                      <div class="col" id="col1DefilaModalExperiencia">
+                                        <label for="tarea" class="form-label">Descripción del trabajo: </label> 
+                                      </div>
+                                      <div class="row" id="col2DefilaModalExperiencia">
+                                        <p class="text col-10 offset-1 border rounded-bottom border-dark" row="1" id="DescripcionTrabajo" name="DescripcionTrabajo">Complete aquí</p>
+                                      </div>
+                                    </div>
+                                    <div class="row" id="filaModalExperiencia">
+                                        <label for="fechaDesempeño" class="form-label">Fecha de desempeño: </label> 
+                                        <div class="row">
+                                          <div class="col">
+                                              Desde: 
+                                              <!-- <button type="button" class="botonSeleccionFechaDesde dropdown-toggle ms-1" data-bs-toggle="dropdown" aria-expanded="false"><img src="img_bootstrap/calendar3.svg"></button> -->
+                                            </div>
+                                            <div class="col">
+                                              <input type="date" class="text" id="fechaDesempeño" name="inicioFechaDesempeño" value="0000-00-00"
+                                                min="1900-01-01" max="3000-12-31">
+                                            </div>
+                                        </div> 
+                                        <div class="row">
+                                            <div class="col">
+                                              Hasta: 
+                                              <!--<button type="button" class="botonSeleccionFechaHasta dropdown-toggle ms-1" data-bs-toggle="dropdown" aria-expanded="false"><img src="img_bootstrap/calendar3.svg"></button> -->
+                                            </div>
+                                            <div class="col">
+                                              <input type="date" class="text" id="fechaDesempeño" name="finalFechaDesempeño" value="0000-00-00"
+                                              min="1900-01-01" max="3000-12-31">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--Cierre filaTemplateModalExperiencia-->
+                                <!-- </template> -->
                               </div> <!--Cierre ModalBody-->
                               <div class="modal-footer">
-                                  <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>
-                              </div>
+                                <button class="btn btn-primary translate-middle-x botonAgregarTrabajoActivo" id="btnAgregarTrabajo">
+                                  Agregar trabajo
+                                </button>
+                                <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>
+                              </div><!--Cierre Modalfooter-->
                           </div>
                       </div>
                   </div><!--Cierre modalExperiencia-->
@@ -341,30 +384,65 @@
                       <div class="modal-dialog">
                           <div class="modal-content">
                               <div class="modal-header">
-                                  <h3 class="modal-title" id="titulosObtenidos">Títulos que he obtenido</h3>
+                                  <h3 class="modal-title" id="titulosObtenidos">Educación</h3>
                                   <button class="botonEditar botonEdicionOculto" type="button" id="editarTitulos" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
                                   <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                               </div>
                               <div class="modal-body">
-                                <div class="row" id="fila1ModalEducacion">
-                                  <div class="col" id="col1Defila1ModalEducacion">
-                                    <label for="nacionalidad" class="form-label">...: </label> 
+
+                              <!--<template id="templateEducacion">--> 
+                              <div class="border rounded p-1 border-warning" id="templateEducacion" name="templateEducacion1">
+                                <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoEducacion" type="button" id="botonsaberSiEliminoSegmentoEducacion"> X</button>
+                                <div class="row" id="filaModalEducacion">
+                                  <div class="col" id="col1DefilaModalEducacion">
+                                    <label for="institucion" class="form-label">Institución: </label>
                                   </div>
-                                  <div class="col" id="col2Defila1ModalEducacion">
-                                    <input type="text" class="form-control" id="nacionalidad" name="nacionalidad">
+                                  <div class="col" id="col2DefilaModalEducacion">
+                                    <p class="text border rounded-end border-dark" id="institucion" name="institucion">Complete aquí</p>
                                   </div>
-                                </div><!--Cierre fila1ModalEducacion-->
-                                <div class="row" id="fila2ModalEducacion">
-                                  <div class="col" id="col1Defila2ModalEducacion">
-                                    <label for="pais" class="form-label">...: </label> 
+                                </div>
+                                <div class="row" id="filaModalEducacion">
+                                  <div class="col" id="col1DefilaModalEducacion">
+                                    <label for="carrera" class="form-label">Carrera: </label>
                                   </div>
-                                  <div class="col" id="col2Defila2ModalEducacion">
-                                    <input type="text" class="form-control" id="pais" name="pais">
+                                  <div class="col" id="col2DefilaModalEducacion">
+                                    <p class="text border rounded-end border-dark" id="carrera" name="carrera">Complete aquí</p>
                                   </div>
-                                </div><!--Cierre fila2ModalEducacion-->                                    
+                                </div>
+                                  <div class="row">
+                                    <div class="col">
+                                      <label for="estudioEnCurso" class="form-label">Cursando actualmente: </label>
+                                    </div>
+                                    <div class="col">
+                                      <input type="checkbox" class="form-check-input" id="estudiaActualmenteCBox">
+                                    </div>
+                                  </div>
+                                <div class="row habilitarTituloProfesionalActivo" id="filaModalEducacionTituloProfesional">
+                                  <div class="col" id="col1DefilaModalEducacion">
+                                    <label for="tituloProfesional" class="form-label">Título: </label> 
+                                  </div>
+                                  <div class="col" id="col2DefilaModalEducacion">
+                                    <p class="text border rounded-end border-dark" id="tituloProfesional" name="tituloProfesional">Complete aquí</p>
+                                  </div>
+                                </div>
+                                <div class="row habilitarTituloProfesionalActivo" id="filaModalEducacionTituloFechaObtencion">
+                                    <div class="row">
+                                      <div class="col">
+                                        <label for="col" class="form-label">Fecha de obtención del título: </label>
+                                      </div> 
+                                      <div class="col"><input type="date" class="text" id="fechaObtencionTitulo" name="fechaObtencionTitulo" value="0000-00-00"
+                                          min="1900-01-01" max="3000-12-31"></div>
+                                    </div>
+                                </div>
+                              </div><!--Cierre filaTemplateModalEducacion-->
+                              <!--</template>-->
+
                               </div> <!--Cierre ModalBody-->
                               <div class="modal-footer">
-                                  <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>
+                                <button class="btn btn-primary translate-middle-x botonAgregarTrabajoActivo" id="btnAgregarTrabajo">
+                                  Agregar estudio
+                                </button>
+                                <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>
                               </div>
                           </div>
                       </div>
@@ -390,25 +468,71 @@
                                   <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                               </div>
                               <div class="modal-body">
-                                <div class="row" id="fila1ModalProyectos">
-                                  <div class="col" id="col1Defila1ModalProyectos">
-                                    <label for="nacionalidad" class="form-label">...: </label> 
-                                  </div>
-                                  <div class="col" id="col2Defila1ModalProyectos">
-                                    <input type="text" class="form-control" id="nacionalidad" name="nacionalidad">
-                                  </div>
-                                </div><!--Cierre fila1ModalProyectos-->
-                                <!---->
-                                <div class="row" id="fila2ModalProyectos">
-                                  <div class="col" id="col1Defila2ModalProyectos">
-                                    <label for="pais" class="form-label">País: </label> 
-                                  </div>
-                                  <div class="col" id="col2Defila2ModalProyectos">
-                                    <input type="text" class="form-control" id="pais" name="pais">
-                                  </div>
-                                </div><!--Cierre fila2ModalProyectos-->                                    
+                                <!-- <template id="templateProyecto"> -->
+                                  <div class="border rounded p-1 border-warning" id="templateProyecto" name="templateProyecto1">
+                                    <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoProyecto" type="button" id="botonsaberSiEliminoSegmentoProyecto"> X</button>
+                                    <div class="row" id="filaModalProyecto">
+                                      <div class="col" id="col1DefilaModalProyecto">
+                                        <label for="nombreProyecto" class="form-label">Nombre del Proyecto: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaModalProyecto">
+                                        <p class="text border rounded-end border-dark" id="nombreProyecto" name="nombreProyecto">Complete aquí</p>
+                                      </div>
+                                    </div>
+                                    <div class="row" id="filaModalProyecto">
+                                      <div class="col">
+                                        <label for="fechaDesempeño" class="form-label">Fecha de realización: </label> 
+                                      </div>
+                                      <div class="col">
+                                        <input type="date" class="text" id="fechaRealizacionProyecto" name="fechaRealizacionProyecto" value="0000-00-00"
+                                          min="1900-01-01" max="3000-12-31">
+                                      </div>
+                                    </div>
+                                    <div class="row" id="filaModalProyecto">
+                                      <div class="col" id="col1DefilaModalExperiencia">
+                                        <label for="tarea" class="form-label">Descripción del Proyecto: </label> 
+                                      </div>
+                                      <div class="row" id="col2DefilaModalProyecto">
+                                        <p class="text col-10 offset-1 border rounded-bottom border-dark" row="1" id="DescripcionTrabajo" name="DescripcionTrabajo">Complete aquí</p>
+                                      </div>
+                                    </div>
+                                    <div class="row" id="filaModalExperiencia">
+                                      <div class="col" id="col1DefilaModalProyecto">
+                                        <label for="enlaceAProyecto" class="form-label">Link para demostrar proyecto: </label> 
+                                      </div>
+                                      <div class="col" id="col2DefilaModalProyecto">
+                                        <p class="text border rounded-end border-dark" id="enlaceAProyecto" name="enlaceAProyecto"><a href="">Enlace al proyecto referido</a></p>
+                                      </div>
+                                    </div>
+                                    <div class="row" id="filaModalProyecto">
+                                      <div class="col input-group" id="col1DefilaModalProyecto">
+                                        <label for="desearAdjuntarFotoProyecto" class="form-label">¿Desea adjuntar foto del Proyecto?</label>
+                                        <button class="btn btn-outline-warning ms-3 btn-sm" type="button" id="botonsaberSiAgregoFotoProyecto">Si</button>
+                                      </div>
+                                      <div class="row input-group agregarFotoProyectoOculto" id="filaModalProyectoAdjFoto" name="filaModalProyectoAdjFoto1">
+                                        <div class="col">
+                                          <button class="btn btn-outline-danger ms-3 btn-sm descripcionBtnOcultar" type="button" id="botonsaberSiOcultoFotoProyecto"> <img src="img_bootstrap/eye-slash.svg"></button>
+                                          <label for="fotoProyecto" class="form-label">Adjunte foto:</label>
+                                          <input type="file" class="form-control" id="fotoProyecto" name="fotoProyecto" disabled>
+                                        </div>
+                                      </div>
+                                    </div>
+                                 </div><!--Cierre filaTemplateModalProyecto-->
+                               <!-- </template> -->
+                               <!--Template para agregar fotos-->
+                               <template id="templateAgregarFotoProyecto">
+                                <div class="row">
+                                      <div class="col">
+                                        <img src="...">
+                                      </div>
+                                </div>
+                              </template>
+                               <!--Cierre de template para agregar fotos-->                                    
                               </div> <!--Cierre ModalBody-->
                               <div class="modal-footer">
+                                <button class="btn btn-primary translate-middle-x botonAgregarTrabajoActivo" id="btnAgregarTrabajo">
+                                  Agregar proyecto
+                                </button>
                                   <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>
                               </div>
                           </div>

@@ -149,8 +149,40 @@ a .githubsvg {
 .inputEdicionDeSeccionesActivo{
    display:block;
 }
-
-
+.botonAgregarTrabajoOculto{
+   display:none;
+}
+.botonAgregarTrabajoActivo{
+   display:block;
+}
+.agregarFotoProyectoOculto{
+   display: none;
+}
+.agregarFotoProyectoActivo{
+   display: block;
+}
+.descripcionBtnOcultar:hover::before{
+   content: "Ocultar carga de foto";
+   white-space: nowrap;
+}
+.habilitarTituloProfesionalOculto{
+   display: none;
+}
+.habilitarTituloProfesionalActivo{
+   display: block;
+}
+.descripcionBtnEliminarSegmentoEducacion:hover::before{
+   content: "Eliminar estudio";
+   white-space: nowrap;
+}
+.descripcionBtnEliminarSegmentoLaboral:hover::before{
+   content: "Eliminar trabajo";
+   white-space: nowrap;
+}
+.descripcionBtnEliminarSegmentoProyecto:hover::before{
+   content: "Eliminar proyecto";
+   white-space: nowrap;
+}
 /*Estilos de modals*/
 .modal-header{
    background-color: orange;

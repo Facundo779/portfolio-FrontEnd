@@ -282,4 +282,73 @@ inputsDatosPersonales.forEach(nuevoDato=>nuevoDato.addEventListener("click", () 
     //botonesEdicion.inputNuevosDatosPersonales();
 }))
 
+
+/*Acciones en fotos de proyecto*/
+const agregarFotoProyecto = document.querySelector('#botonsaberSiAgregoFotoProyecto');
+const ocultarFotoProyecto = document.querySelector('#botonsaberSiOcultoFotoProyecto');
+const eliminarProyecto = document.querySelector('#botonsaberSiEliminoSegmentoProyecto');
+
+const habilitarCargarProyecto = {
+    habilitandoCargaFoto : function(){
+        document.querySelector('#filaModalProyectoAdjFoto').classList.replace('agregarFotoProyectoOculto','agregarFotoProyectoActivo');
+    },
+    ocultarCargaFoto : function() {
+        document.querySelector('#filaModalProyectoAdjFoto').classList.replace('agregarFotoProyectoActivo','agregarFotoProyectoOculto');
+    },
+    eliminarProyecto : function(){
+        document.querySelector('[name="templateProyecto1"]').remove();
+    }
+}
+
+agregarFotoProyecto.addEventListener('click', ()=>{
+    habilitarCargarProyecto.habilitandoCargaFoto();
+})
+ocultarFotoProyecto.addEventListener('click', ()=>{
+    habilitarCargarProyecto.ocultarCargaFoto();
+})
+eliminarProyecto.addEventListener('click', ()=>{
+    habilitarCargarProyecto.eliminarProyecto();
+})
+
+/*Funciones de tarjeta educación*/
+const cursandoActualmente = document.querySelector('#estudiaActualmenteCBox');
+const eliminarEstudio = document.querySelector('#templateEducacion1');
+const botonEliminarSegmentoEdu = document.querySelector('#botonsaberSiEliminoSegmentoEducacion');
+
+const habilitarCargaTitulo = {
+    habilitandoCargaTitulo : function(){
+        if(cursandoActualmente.checked){
+        document.querySelector('#filaModalEducacionTituloProfesional').classList.replace('habilitarTituloProfesionalActivo','habilitarTituloProfesionalOculto');
+        document.querySelector('#filaModalEducacionTituloFechaObtencion').classList.replace('habilitarTituloProfesionalActivo','habilitarTituloProfesionalOculto');
+        }else{
+        document.querySelector('#filaModalEducacionTituloProfesional').classList.replace('habilitarTituloProfesionalOculto','habilitarTituloProfesionalActivo');
+        document.querySelector('#filaModalEducacionTituloFechaObtencion').classList.replace('habilitarTituloProfesionalOculto','habilitarTituloProfesionalActivo');
+        }  
+    },
+    eliminandoCargaTitulo : function(){
+        document.querySelector('[name="templateEducacion1"]').remove();
+    }
+}
+
+cursandoActualmente.addEventListener('change', ()=>{
+habilitarCargaTitulo.habilitandoCargaTitulo();
+})
+
+botonEliminarSegmentoEdu.addEventListener('click', ()=>{
+    habilitarCargaTitulo.eliminandoCargaTitulo();
+})
+
+/*Funciones de tarjeta experiencia*/
+const conjuntoTemplateLaboral = document.querySelector('#templateLaboral');
+const botonEliminarTemplateLaboral = document.querySelector('#botonsaberSiEliminoSegmentoLaboral');
+
+const accionesSobreTemplateLaboral = {
+    eliminandoTemplateLaboral : function(){
+        document.querySelector('[name="templateLaboral1"]').remove();
+    }
+}
+
+botonEliminarTemplateLaboral.addEventListener('click', ()=>{
+    accionesSobreTemplateLaboral.eliminandoTemplateLaboral();
+})
 /*Templates*/ 
