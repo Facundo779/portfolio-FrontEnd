@@ -304,11 +304,11 @@
                                   <button class="botonEditar botonEdicionOculto" type="button" id="editarExperiencia" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
                                   <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                               </div>
-                              <div class="modal-body">
+                              <div class="modal-body" id="modalBodyLaboral">
                                 
-                               <!-- <template id="templateLaboral"> -->
-                                  <div class="border rounded p-1 border-warning" id="templateLaboral" name="templateLaboral1">
-                                    <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoLaboral" type="button" id="botonsaberSiEliminoSegmentoLaboral"> X</button>
+                                <template id="templateLaboral">
+                                  <div class="border rounded p-1 border-warning" id="templateLaborales" name="templateLaboral1">
+                                    <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoLaboral" type="button" id="botonSaberSiEliminoSegmentoLaboral" name="btnSegmentoLaboral1"> X</button>
                                     <div class="row" id="filaModalExperiencia">
                                       <div class="col" id="col1DefilaModalExperiencia">
                                         <label for="empresa" class="form-label">Empresa: </label> 
@@ -357,7 +357,7 @@
                                         </div>
                                     </div>
                                 </div><!--Cierre filaTemplateModalExperiencia-->
-                                <!-- </template> -->
+                              </template> 
                               </div> <!--Cierre ModalBody-->
                               <div class="modal-footer">
                                 <button class="btn btn-primary translate-middle-x botonAgregarTrabajoActivo" id="btnAgregarTrabajo">

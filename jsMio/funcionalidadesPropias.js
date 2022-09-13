@@ -339,8 +339,9 @@ botonEliminarSegmentoEdu.addEventListener('click', ()=>{
 })
 
 /*Funciones de tarjeta experiencia*/
-const conjuntoTemplateLaboral = document.querySelector('#templateLaboral');
-const botonEliminarTemplateLaboral = document.querySelector('#botonsaberSiEliminoSegmentoLaboral');
+/*
+const conjuntoTemplateLaboral = document.querySelector('#templateLaborales');
+const botonEliminarTemplateLaboral = document.querySelector('#botonSaberSiEliminoSegmentoLaboral');
 
 const accionesSobreTemplateLaboral = {
     eliminandoTemplateLaboral : function(){
@@ -350,5 +351,38 @@ const accionesSobreTemplateLaboral = {
 
 botonEliminarTemplateLaboral.addEventListener('click', ()=>{
     accionesSobreTemplateLaboral.eliminandoTemplateLaboral();
-})
-/*Templates*/ 
+}) 
+*/
+/*Template Laboral*/
+ const btnNuevoTrabajo = document.getElementById('btnAgregarTrabajo');
+ const conjuntoTemplateLaboral = document.querySelector('#templateLaborales');
+ //const botonEliminarTemplateLaboral = document.querySelectorAll('#botonSaberSiEliminoSegmentoLaboral');
+
+ const templateNuevoTrabajo = {
+    eliminandoTemplateLaboral : function(){
+        document.querySelector('[name="templateLaboral1"]').remove();
+    },
+    insertarNuevoTrabajo : function(){
+        const modalBdyExperiencia = document.getElementById('modalBodyLaboral');
+        const templateDeTrabajo = document.getElementById('templateLaboral').content;
+        const nuevoTemplateTrabajo = document.createDocumentFragment();
+        const clonarTemplateTrabajo = templateDeTrabajo.cloneNode(true);
+        nuevoTemplateTrabajo.appendChild(clonarTemplateTrabajo);
+        modalBdyExperiencia.appendChild(nuevoTemplateTrabajo);
+        //document.querySelector('#botonSaberSiEliminoSegmentoLaboral').addEventListener('click', ()=>{document.querySelector('[name="templateLaboral1"]').remove()});     
+        const botonEliminarTemplateLaboral = document.querySelectorAll('#botonSaberSiEliminoSegmentoLaboral');
+        botonEliminarTemplateLaboral.forEach(nuevoTrabajo=>nuevoTrabajo.addEventListener('click', ()=>{
+            templateNuevoTrabajo.eliminandoTemplateLaboral();
+        }))
+       // inputsDatosPersonales.forEach(nuevoDato=>nuevoDato.addEventListener("click", () => {
+    }
+ }
+
+ btnNuevoTrabajo.addEventListener('click', ()=>{
+    templateNuevoTrabajo.insertarNuevoTrabajo();
+ })
+
+/*
+ botonEliminarTemplateLaboral.addEventListener('click', ()=>{
+    templateNuevoTrabajo.eliminandoTemplateLaboral();  
+})*/
