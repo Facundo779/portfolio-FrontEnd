@@ -176,7 +176,7 @@ a .githubsvg {
    white-space: nowrap;
 }
 .descripcionBtnEliminarSegmentoLaboral:hover::before{
-   content: "Eliminar trabajo";
+   content: "Eliminar trabajos seleccionados";
    white-space: nowrap;
 }
 .descripcionBtnEliminarSegmentoProyecto:hover::before{

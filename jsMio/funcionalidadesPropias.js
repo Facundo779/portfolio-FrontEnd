@@ -355,28 +355,65 @@ botonEliminarTemplateLaboral.addEventListener('click', ()=>{
 */
 /*Template Laboral*/
  const btnNuevoTrabajo = document.getElementById('btnAgregarTrabajo');
- const conjuntoTemplateLaboral = document.querySelector('#templateLaborales');
- //const botonEliminarTemplateLaboral = document.querySelectorAll('#botonSaberSiEliminoSegmentoLaboral');
+ const botonEliminarTemplateLaboral = document.getElementById('botonSaberSiEliminoSegmentoLaboral');
+
 
  const templateNuevoTrabajo = {
+    iterante : 0,
+    cBxSeleccion : false,
     eliminandoTemplateLaboral : function(){
-        document.querySelector('[name="templateLaboral1"]').remove();
+        //document.querySelector(`[name="${target_name_laboral}"]`).remove();
+        this.iterante = this.iterante -= 1;  
     },
+    seleccionCBxLab : function(){
+        const cBxSeleccionTemLab = document.querySelectorAll('#checkBoxSaberSiEliminoSegmentoLaboral');
+        this.cBxSeleccion = true;
+        cBxSeleccionTemLab.addEventListener('click', ()=>{
+            console.log(this.cBxSeleccion);
+        });
+        
+        /*
+        cBxSeleccionTemLab.forEach(cBxLab=>cBxLab.addEventListener('click', ()=>{ 
+            console.log('click');
+        }));
+        */
+    },
+
     insertarNuevoTrabajo : function(){
+        
         const modalBdyExperiencia = document.getElementById('modalBodyLaboral');
         const templateDeTrabajo = document.getElementById('templateLaboral').content;
         const nuevoTemplateTrabajo = document.createDocumentFragment();
         const clonarTemplateTrabajo = templateDeTrabajo.cloneNode(true);
         nuevoTemplateTrabajo.appendChild(clonarTemplateTrabajo);
         modalBdyExperiencia.appendChild(nuevoTemplateTrabajo);
-        //document.querySelector('#botonSaberSiEliminoSegmentoLaboral').addEventListener('click', ()=>{document.querySelector('[name="templateLaboral1"]').remove()});     
-        const botonEliminarTemplateLaboral = document.querySelectorAll('#botonSaberSiEliminoSegmentoLaboral');
-        botonEliminarTemplateLaboral.forEach(nuevoTrabajo=>nuevoTrabajo.addEventListener('click', ()=>{
-            templateNuevoTrabajo.eliminandoTemplateLaboral();
-        }))
+        const conjuntoTemplateLaboral = document.querySelectorAll('#templateLaborales');
+        this.iterante = this.iterante += 1; 
+        const nuevoNameTempLab = 'templateLaboral' + this.iterante;
+        //(descartado pero queda de ejemplo)conjuntoTemplateLaboral[conjuntoTemplateLaboral.length - 1].forEach(porCNuevoTempLab=>porCNuevoTempLab.setAttribute('name',`"${nuevoNameTempLab}"`));
+        conjuntoTemplateLaboral[conjuntoTemplateLaboral.length - 1].setAttribute('name',`${nuevoNameTempLab}`);
+        //botonEliminarTemplateLaboral[botonEliminarTemplateLaboral.length - 1].setAttribute('name',`${nuevoNameBtnTempLab}`);
+        
        // inputsDatosPersonales.forEach(nuevoDato=>nuevoDato.addEventListener("click", () => {
     }
- }
+}
+
+botonEliminarTemplateLaboral.addEventListener('click', ()=>{ 
+    console.log('click');
+    if(this.cBxSeleccion){
+        var seBorraTempLab = prompt('Se van a eliminar los trabajos seleccionados, si está de acuerdo: presione (s) sino (n)');
+        switch(seBorraTempLab){
+            case "s":
+            templateNuevoTrabajo.eliminandoTemplateLaboral();
+            break;
+            case "n":
+            alert('No se borrará nada. Puede seleccionar nuevamente si lo desea')
+        }
+    }else{
+        alert('Ha presionado una tecla que no se encuentra habilitada');
+    }
+    
+})
 
  btnNuevoTrabajo.addEventListener('click', ()=>{
     templateNuevoTrabajo.insertarNuevoTrabajo();

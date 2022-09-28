@@ -305,10 +305,11 @@
                                   <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                               </div>
                               <div class="modal-body" id="modalBodyLaboral">
-                                
+                                <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoLaboral" type="button" id="botonSaberSiEliminoSegmentoLaboral" name="btnSegmentoLaboral"> X</button>
                                 <template id="templateLaboral">
-                                  <div class="border rounded p-1 border-warning" id="templateLaborales" name="templateLaboral1">
-                                    <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoLaboral" type="button" id="botonSaberSiEliminoSegmentoLaboral" name="btnSegmentoLaboral1"> X</button>
+                                  <div class="border rounded p-1 border-warning" id="templateLaborales" name="templateLaboral">
+                                    <input type="checkbox" id="checkBoxSaberSiEliminoSegmentoLaboral" name="cBxSegmentoLaboral">
+                                   <!-- <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoLaboral" type="button" id="botonSaberSiEliminoSegmentoLaboral" name="btnSegmentoLaboral"> X</button> -->
                                     <div class="row" id="filaModalExperiencia">
                                       <div class="col" id="col1DefilaModalExperiencia">
                                         <label for="empresa" class="form-label">Empresa: </label> 
@@ -341,7 +342,7 @@
                                               <!-- <button type="button" class="botonSeleccionFechaDesde dropdown-toggle ms-1" data-bs-toggle="dropdown" aria-expanded="false"><img src="img_bootstrap/calendar3.svg"></button> -->
                                             </div>
                                             <div class="col">
-                                              <input type="date" class="text" id="fechaDesempeño" name="inicioFechaDesempeño" value="0000-00-00"
+                                              <input type="date" class="text" id="fechaDesempeño" name="inicioFechaDesempeño" value=""
                                                 min="1900-01-01" max="3000-12-31">
                                             </div>
                                         </div> 
@@ -351,7 +352,7 @@
                                               <!--<button type="button" class="botonSeleccionFechaHasta dropdown-toggle ms-1" data-bs-toggle="dropdown" aria-expanded="false"><img src="img_bootstrap/calendar3.svg"></button> -->
                                             </div>
                                             <div class="col">
-                                              <input type="date" class="text" id="fechaDesempeño" name="finalFechaDesempeño" value="0000-00-00"
+                                              <input type="date" class="text" id="fechaDesempeño" name="finalFechaDesempeño" value=""
                                               min="1900-01-01" max="3000-12-31">
                                             </div>
                                         </div>
@@ -430,8 +431,9 @@
                                       <div class="col">
                                         <label for="col" class="form-label">Fecha de obtención del título: </label>
                                       </div> 
-                                      <div class="col"><input type="date" class="text" id="fechaObtencionTitulo" name="fechaObtencionTitulo" value="0000-00-00"
-                                          min="1900-01-01" max="3000-12-31"></div>
+                                      <div class="col"><input type="date" class="text" id="fechaObtencionTitulo" name="fechaObtencionTitulo" value=""
+                                          min="1900-01-01" max="3000-12-31">
+                                      </div>
                                     </div>
                                 </div>
                               </div><!--Cierre filaTemplateModalEducacion-->
@@ -484,7 +486,7 @@
                                         <label for="fechaDesempeño" class="form-label">Fecha de realización: </label> 
                                       </div>
                                       <div class="col">
-                                        <input type="date" class="text" id="fechaRealizacionProyecto" name="fechaRealizacionProyecto" value="0000-00-00"
+                                        <input type="date" class="text" id="fechaRealizacionProyecto" name="fechaRealizacionProyecto" value=""
                                           min="1900-01-01" max="3000-12-31">
                                       </div>
                                     </div>
