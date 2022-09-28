@@ -356,27 +356,24 @@ botonEliminarTemplateLaboral.addEventListener('click', ()=>{
 /*Template Laboral*/
  const btnNuevoTrabajo = document.getElementById('btnAgregarTrabajo');
  const botonEliminarTemplateLaboral = document.getElementById('botonSaberSiEliminoSegmentoLaboral');
-
+ //const cBxSeleccionTemLab = document.querySelectorAll('#checkBoxSaberSiEliminoSegmentoLaboral');
 
  const templateNuevoTrabajo = {
     iterante : 0,
     cBxSeleccion : false,
+    cBxSeleccionTemLab:[], 
     eliminandoTemplateLaboral : function(){
         //document.querySelector(`[name="${target_name_laboral}"]`).remove();
         this.iterante = this.iterante -= 1;  
     },
+    
     seleccionCBxLab : function(){
-        const cBxSeleccionTemLab = document.querySelectorAll('#checkBoxSaberSiEliminoSegmentoLaboral');
-        this.cBxSeleccion = true;
-        cBxSeleccionTemLab.addEventListener('click', ()=>{
-            console.log(this.cBxSeleccion);
-        });
-        
-        /*
-        cBxSeleccionTemLab.forEach(cBxLab=>cBxLab.addEventListener('click', ()=>{ 
+        this.cBxSeleccionTemLab.forEach(cBxLab=>cBxLab.addEventListener('click', ()=>{
             console.log('click');
         }));
-        */
+        this.cBxSeleccion = true;
+        console.log(this.cBxSeleccion);
+        console.log(this.cBxSeleccionTemLab);
     },
 
     insertarNuevoTrabajo : function(){
@@ -393,7 +390,8 @@ botonEliminarTemplateLaboral.addEventListener('click', ()=>{
         //(descartado pero queda de ejemplo)conjuntoTemplateLaboral[conjuntoTemplateLaboral.length - 1].forEach(porCNuevoTempLab=>porCNuevoTempLab.setAttribute('name',`"${nuevoNameTempLab}"`));
         conjuntoTemplateLaboral[conjuntoTemplateLaboral.length - 1].setAttribute('name',`${nuevoNameTempLab}`);
         //botonEliminarTemplateLaboral[botonEliminarTemplateLaboral.length - 1].setAttribute('name',`${nuevoNameBtnTempLab}`);
-        
+        this.cBxSeleccionTemLab = document.querySelectorAll('#checkBoxSaberSiEliminoSegmentoLaboral');
+        templateNuevoTrabajo.seleccionCBxLab();
        // inputsDatosPersonales.forEach(nuevoDato=>nuevoDato.addEventListener("click", () => {
     }
 }
