@@ -398,7 +398,8 @@ botonEliminarTemplateLaboral.addEventListener('click', ()=>{
 
 botonEliminarTemplateLaboral.addEventListener('click', ()=>{ 
     console.log('click');
-    if(this.cBxSeleccion){
+    console.log(templateNuevoTrabajo.cBxSeleccion);
+    if(templateNuevoTrabajo.cBxSeleccion){
         var seBorraTempLab = prompt('Se van a eliminar los trabajos seleccionados, si está de acuerdo: presione (s) sino (n)');
         switch(seBorraTempLab){
             case "s":
