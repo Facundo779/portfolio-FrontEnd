@@ -362,24 +362,42 @@ botonEliminarTemplateLaboral.addEventListener('click', ()=>{
  const templateNuevoTrabajo = {
     iterante : 0,
     cBxSeleccionHabilitada : false,
+    conjuntoTemplateLaboral:[],
     cBxSeleccionTemLab:[], 
     cBxSeleccionados:[],
-    eliminandoTemplateLaboral : function(){
+    e_laboralNoSeleccionados:[],
+    eliminandoTemplateLaboral : function(e_laboralAEliminar){
+        if(this.conjuntoTemplateLaboral.forEach(e_cBxName=>e_cBxName.getAttribute('cBxName'))===e_laboralAEliminar.forEach(e_labPorEliminar=>e_labPorEliminar.getAttribute('name'))){
+            console.log(e_cBxName);
+        }else{
+            console.log('CÓDIGO Nº 0: Hay templates que no se han descartado');
+        }
+        this.cBxSeleccionHabilitada = false;
+        //e_laboralAEliminar.forEach(e_labPorEliminar=>e_labPorEliminar.remove());
         //document.querySelector(`[name="${target_name_laboral}"]`).remove();
-        this.iterante = this.iterante -= 1;  
+        //this.iterante = this.iterante -= 1;  
     },
     
     seleccionCBxLab : function(){
         this.cBxSeleccionTemLab = document.querySelectorAll('#checkBoxSaberSiEliminoSegmentoLaboral');
         console.log(this.cBxSeleccionTemLab);
-        this.cBxSeleccionTemLab.forEach(cBxLab=>this.cBxSeleccionados.push(cBxLab.checked));
+       //(NO ELIMINAR ESTA LINEA)this.cBxSeleccionTemLab.forEach(cBxLab=>this.cBxSeleccionados.push(cBxLab.checked));
+        this.cBxSeleccionTemLab.forEach((cBxLab)=>{if(cBxLab.checked===true){
+            this.cBxSeleccionados.push(cBxLab)
+        }else{
+            this.e_laboralNoSeleccionados.push(cBxLab);
+            //console.log(e_laboralNoSeleccionados);
+            console.log('CÓDIGO Nº 1: Estos elementos no han sido seleccionados...');
+            console.log(this.e_laboralNoSeleccionados);
+            };
+        });
         console.log(this.cBxSeleccionados);
         
         if(this.cBxSeleccionados){
             this.cBxSeleccionHabilitada = true;
             console.log(this.cBxSeleccionHabilitada);
         }else{
-            alert('No se ha seleccionado ningun elemento para eliminar');
+            alert('CÓDIGO Nº 2:No se ha seleccionado ningun elemento para eliminar');
         }
     },
 
@@ -391,11 +409,16 @@ botonEliminarTemplateLaboral.addEventListener('click', ()=>{
         const clonarTemplateTrabajo = templateDeTrabajo.cloneNode(true);
         nuevoTemplateTrabajo.appendChild(clonarTemplateTrabajo);
         modalBdyExperiencia.appendChild(nuevoTemplateTrabajo);
-        const conjuntoTemplateLaboral = document.querySelectorAll('#templateLaborales');
+        this.conjuntoTemplateLaboral = document.querySelectorAll('#templateLaborales');
+        this.cBxSeleccionTemLab = document.querySelectorAll('#checkBoxSaberSiEliminoSegmentoLaboral');
         this.iterante = this.iterante += 1; 
         const nuevoNameTempLab = 'templateLaboral' + this.iterante;
+        const nuevocBxNameTempLab = 'cBxSegmentoLaboral' + this.iterante;
+        const nuevoName_cBx = 'cBxSegmentoLaboral' + this.iterante;
         //(descartado pero queda de ejemplo)conjuntoTemplateLaboral[conjuntoTemplateLaboral.length - 1].forEach(porCNuevoTempLab=>porCNuevoTempLab.setAttribute('name',`"${nuevoNameTempLab}"`));
-        conjuntoTemplateLaboral[conjuntoTemplateLaboral.length - 1].setAttribute('name',`${nuevoNameTempLab}`);
+        this.conjuntoTemplateLaboral[this.conjuntoTemplateLaboral.length - 1].setAttribute('name',`${nuevoNameTempLab}`);
+        this.conjuntoTemplateLaboral[this.conjuntoTemplateLaboral.length - 1].setAttribute('cBxName',`${nuevocBxNameTempLab}`);
+        this.cBxSeleccionTemLab[this.cBxSeleccionTemLab.length - 1].setAttribute('name',`${nuevoName_cBx}`);
         //botonEliminarTemplateLaboral[botonEliminarTemplateLaboral.length - 1].setAttribute('name',`${nuevoNameBtnTempLab}`);
         //this.cBxSeleccionTemLab = document.querySelectorAll('#checkBoxSaberSiEliminoSegmentoLaboral');
        // inputsDatosPersonales.forEach(nuevoDato=>nuevoDato.addEventListener("click", () => {
@@ -404,17 +427,17 @@ botonEliminarTemplateLaboral.addEventListener('click', ()=>{
 
 botonEliminarTemplateLaboral.addEventListener('click', ()=>{
     templateNuevoTrabajo.seleccionCBxLab(); 
-    if(templateNuevoTrabajo.cBxSeleccionados){
+    if(templateNuevoTrabajo.cBxSeleccionHabilitada){
         var seBorraTempLab = prompt('Se van a eliminar los trabajos seleccionados, si está de acuerdo: presione (s) sino (n)');
         switch(seBorraTempLab){
             case "s":
-            templateNuevoTrabajo.eliminandoTemplateLaboral();
+            templateNuevoTrabajo.eliminandoTemplateLaboral(templateNuevoTrabajo.cBxSeleccionados);
             break;
             case "n":
-            alert('No se borrará nada. Puede seleccionar nuevamente si lo desea')
+            alert('CÓDIGO Nº 3:No se borrará nada. Puede seleccionar nuevamente si lo desea')
         }
     }else{
-        alert('Ha presionado una tecla que no se encuentra habilitada');
+        alert('CÓDIGO Nº 4:Ha presionado una tecla que no se encuentra habilitada');
     }
     
 })
