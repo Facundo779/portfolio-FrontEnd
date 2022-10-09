@@ -16,17 +16,6 @@ const validarRegistro = (evento) => {
     switch (evento.target.name) {
         case "nombre":
             validarCampo(expresionesComparacion.nombre, evento.target, 'checkBox1', 'mnsjAlert1');
-            /*
-            if(expresionesComparacion.nombre.test(evento.target.value)){
-                document.getElementById('checkBox1').classList.remove('iconoValidacion_neutral');
-                document.getElementById('checkBox1').classList.add('iconoValidacion_correcto');
-                document.getElementById('checkBox1').classList.remove('iconoValidacion_incorrecto');
-                document.getElementById('mnsjAlert').classList.remove('mensajeAtencionActivo');    
-            }else{
-                document.getElementById('checkBox1').classList.remove('iconoValidacion_neutro');
-                document.getElementById('checkBox1').classList.add('iconoValidacion_incorrecto');
-                document.getElementById('mnsjAlert').classList.add('mensajeAtencionActivo');
-            }  */
         break;
         case "apellido":
             validarCampo(expresionesComparacion.apellido, evento.target,'checkBox2','mnsjAlert2');
@@ -105,13 +94,6 @@ const datosRequeridos = {
         }
     }
 }
-/*
-const limpiarCbox = () => {
-    document.querySelectorAll('.form-check-input').forEach((checkbox)=>{
-        checkbox.classList.remove('iconoValidacion_correcto');
-        checkbox.classList.add('iconoValidacion_neutral');
-    })
-} */
 
 inputs.forEach((input) => {
     input.addEventListener('keyup', validarRegistro);
@@ -121,7 +103,7 @@ inputs.forEach((input) => {
 bodyRegistro.addEventListener('submit', (evento) =>{
     evento.preventDefault();
     datosRequeridos.envioAcorde();
-    //limpiarCbox();
+    
 })
 
 //Iniciar Sesión
@@ -146,22 +128,8 @@ const validarInicioSesion = {
             } 
     },
     habilitarEdicion: function () {
-       //const arrayTarjetaCv = document.getElementsByName('tarjetaCv');
         if(this.mail&&this.pass){
             arrayBotonEditar.forEach(elementBoton => elementBoton.classList.replace('botonEdicionOculto', 'botonEdicionActivo'));
-            //[FUNCIONA CORRECTAMENTE LA SIGUIENTE LINEA]arrayTarjetaCv.forEach(elementTarjeta => elementTarjeta.classList.replace('tarjetaCvOculto', 'tarjetaCvActivo'));
-            //[FUNCIONA CORRECTAMENTE LA SIGUIENTE LINEA]arrayTarjetaCv.forEach(elementTarjeta=> console.log(elementTarjeta));
-            
-            
-            //arrayBotonEditar.forEach(element=> console.log(element));
-            /*
-            document.getElementsByName('botonEditar')[0].classList.replace('botonEdicionOculto', 'botonEdicionActivo');
-            document.getElementsByName('botonEditar')[1].classList.replace('botonEdicionOculto', 'botonEdicionActivo');
-            document.getElementsByName('botonEditar')[2].classList.replace('botonEdicionOculto', 'botonEdicionActivo');
-            document.getElementsByName('botonEditar')[3].classList.replace('botonEdicionOculto', 'botonEdicionActivo');
-            document.getElementsByName('botonEditar')[4].classList.replace('botonEdicionOculto', 'botonEdicionActivo');
-            document.getElementsByName('tarjetaCv').forEach([`${arrayTarjetaCv}`]).classList.replace('botonEdicionOculto', 'botonEdicionActivo');
-           */
             alert("Se ha habilitado la edición del Currriculum");
         }else{
             
@@ -182,7 +150,6 @@ document.getElementById('cerrarSesion').addEventListener('click', (e_sesionClose
     
     const cerrarSesionRespuestaUsuario = prompt("Está por cerrar sesión...Si desea cerrarla presione: - s - sino - n -");
     if(cerrarSesionRespuestaUsuario==="s"){
-        //inputsDatosPersonales.forEach(elementoInput=> elementoInput.setAttribute('disabled', ''));
         arrayBotonEditar.forEach(elementBoton => elementBoton.classList.replace('botonEdicionActivo', 'botonEdicionOculto'));
         document.getElementById('formInicioSesion').classList.remove('formDropdownOculto');
         document.querySelector('[name="fotoPerfil"]').setAttribute('disabled', '');
@@ -197,16 +164,17 @@ document.getElementById('cerrarSesion').addEventListener('click', (e_sesionClose
     
 })
 
-
-/*Editar campos*/
+/*
+[EL SIGUIENTE CÓDIGO ESTÁ DESHABILITADO PERO QUEDA DE RESPALDO]
+ //Editar campos de AcercaDe
  const editDatosPersonal = document.getElementById('editarDatosPersonales');
  const nombreCompletoPortadaTarjeta = document.getElementsByClassName('.card-title');
  const tituloProfesionalPortadaTarjeta = document.getElementsByClassName('.card-text');
  const inputsDatosPersonales = document.querySelectorAll('#inputDatosPersonales');
  
-   /* const nombreCompletoPortadaTarjeta = document.getElementsByClassName('.card-title');
+   //const nombreCompletoPortadaTarjeta = document.getElementsByClassName('.card-title');
     const tituloProfesionalPortadaTarjeta = document.getElementsByClassName('.card-text');
-    const inputsDatosPersonales = querySelectorAll('#inputDatosPersonales');*/ //LOS PUSE FUERA DE LA FUNCION
+    const inputsDatosPersonales = querySelectorAll('#inputDatosPersonales'); //LOS PUSE FUERA DE LA FUNCION
  
  const botonesEdicion = {
     edicionHabilitada: false,
@@ -269,21 +237,15 @@ document.getElementById('cerrarSesion').addEventListener('click', (e_sesionClose
 
  editDatosPersonal.addEventListener('click', () =>{
     botonesEdicion.habilitarCamposDatosPersonales();
-    //inputsDatosPersonales.forEach(elementoInput=> elementoInput.removeAttribute('disabled'));
-    // document.querySelector('[name="nombreCompleto"]').setAttribute('placeholder', prompt('Ingrese su nombre'));
-    //document.querySelectorAll('#inputDatosPersonales').forEach(elementoInput=> elementoInput.removeAttribute('disabled'));
-
 })
 var seleccion = null;
 inputsDatosPersonales.forEach(nuevoDato=>nuevoDato.addEventListener("click", () => {
     seleccion = nuevoDato.getAttribute('name');
     botonesEdicion.inputNuevosDatosPersonales();
-    //seleccion= inputsDatosPersonales[0].getAttribute('name');
-    //botonesEdicion.inputNuevosDatosPersonales();
 }))
 
 
-/*Acciones en fotos de proyecto*/
+//Acciones en fotos de proyecto
 const agregarFotoProyecto = document.querySelector('#botonsaberSiAgregoFotoProyecto');
 const ocultarFotoProyecto = document.querySelector('#botonsaberSiOcultoFotoProyecto');
 const eliminarProyecto = document.querySelector('#botonsaberSiEliminoSegmentoProyecto');
@@ -310,7 +272,7 @@ eliminarProyecto.addEventListener('click', ()=>{
     habilitarCargarProyecto.eliminarProyecto();
 })
 
-/*Funciones de tarjeta educación*/
+//Funciones de tarjeta educación
 const cursandoActualmente = document.querySelector('#estudiaActualmenteCBox');
 const eliminarEstudio = document.querySelector('#templateEducacion1');
 const botonEliminarSegmentoEdu = document.querySelector('#botonsaberSiEliminoSegmentoEducacion');
@@ -338,26 +300,11 @@ botonEliminarSegmentoEdu.addEventListener('click', ()=>{
     habilitarCargaTitulo.eliminandoCargaTitulo();
 })
 
-/*Funciones de tarjeta experiencia*/
-/*
-const conjuntoTemplateLaboral = document.querySelector('#templateLaborales');
-const botonEliminarTemplateLaboral = document.querySelector('#botonSaberSiEliminoSegmentoLaboral');
+//Funciones de tarjeta experiencia
 
-const accionesSobreTemplateLaboral = {
-    eliminandoTemplateLaboral : function(){
-        document.querySelector('[name="templateLaboral1"]').remove();
-    }
-}
-
-botonEliminarTemplateLaboral.addEventListener('click', ()=>{
-    accionesSobreTemplateLaboral.eliminandoTemplateLaboral();
-}) 
-*/
-/*Template Laboral*/
+//Template Laboral
  const btnNuevoTrabajo = document.getElementById('btnAgregarTrabajo');
  const botonEliminarTemplateLaboral = document.getElementById('botonSaberSiEliminoSegmentoLaboral');
- //templateNuevoTrabajo.cBxSeleccionTemLab = document.querySelectorAll('#checkBoxSaberSiEliminoSegmentoLaboral');
- //const cBxSeleccionTemLab = document.querySelectorAll('#checkBoxSaberSiEliminoSegmentoLaboral');
 
  const templateNuevoTrabajo = {
     iterante : 0,
@@ -374,23 +321,7 @@ botonEliminarTemplateLaboral.addEventListener('click', ()=>{
         e_conjuntoTL.forEach(e_cBxName=>console.log(e_cBxName.getAttribute('cbxname')));
         e_laboralAEliminar.forEach(e_labPorEliminar=>console.log(e_labPorEliminar.getAttribute('name')));
         console.log('Borrará:');
-
-    /*e_conjuntoTL.forEach((e_cBxName)=>{if(e_cBxName.getAttribute('cbxname') === 'cBxSegmentoLaboral1'){
-    this.conjuntoTemplateLaboralEliminandose.push(e_cBxName);
-    }*/
-    /* ESTO ESTÁ CORRECTO: NO BORRAR
-    e_laboralAEliminar.forEach((e_labE)=>{
-        this.i_labE = this.conjuntoTemplateLaboral.length;
-        console.log(this.i_labE);
-        const iterante_labE = 1;
-            switch(e_labE.getAttribute('name')){              
-                case 'cBxSegmentoLaboral'+`${iterante_labE}`:
-                    e_conjuntoTL.forEach((e_cBxName)=>{if(e_cBxName.getAttribute('cbxname') === e_labE.getAttribute('name')){
-                    this.conjuntoTemplateLaboralEliminandose.push(e_cBxName)}});
-                break;    
-                }
-    });*/
-    //El siguiente código funciona completamente
+    
     e_laboralAEliminar.forEach((e_labE)=>{
         this.i_labE = this.conjuntoTemplateLaboral.length;
         console.log(this.i_labE);
@@ -403,13 +334,9 @@ botonEliminarTemplateLaboral.addEventListener('click', ()=>{
                 break;    
                 }}
     });
-        //this.conjuntoTemplateLaboralEliminandose = e_conjuntoTL.find(e_cBxNameL => e_cBxNameL.getAttribute('name') === 'templateLaboral1');
-        //this.conjuntoTemplateLaboralEliminandose = e_laboralAEliminar.find(e_labE => e_labE.getAttribute('name') === 'cBxSegmentoLaboral1');
         console.log(this.conjuntoTemplateLaboralEliminandose);
         this.conjuntoTemplateLaboralEliminandose.forEach(e_definitivoAEliminar=>e_definitivoAEliminar.remove());
         this.cBxSeleccionHabilitada = false;
-        //e_laboralAEliminar.forEach(e_labPorEliminar=>e_labPorEliminar.remove());
-        //document.querySelector(`[name="${target_name_laboral}"]`).remove();
         //this.iterante = this.iterante -= 1;  
     },
     
@@ -450,13 +377,10 @@ botonEliminarTemplateLaboral.addEventListener('click', ()=>{
         const nuevoNameTempLab = 'templateLaboral' + this.iterante;
         const nuevocBxNameTempLab = 'cBxSegmentoLaboral' + this.iterante;
         const nuevoName_cBx = 'cBxSegmentoLaboral' + this.iterante;
-        //(descartado pero queda de ejemplo)conjuntoTemplateLaboral[conjuntoTemplateLaboral.length - 1].forEach(porCNuevoTempLab=>porCNuevoTempLab.setAttribute('name',`"${nuevoNameTempLab}"`));
+        
         this.conjuntoTemplateLaboral[this.conjuntoTemplateLaboral.length - 1].setAttribute('name',`${nuevoNameTempLab}`);
         this.conjuntoTemplateLaboral[this.conjuntoTemplateLaboral.length - 1].setAttribute('cbxname',`${nuevocBxNameTempLab}`);
         this.cBxSeleccionTemLab[this.cBxSeleccionTemLab.length - 1].setAttribute('name',`${nuevoName_cBx}`);
-        //botonEliminarTemplateLaboral[botonEliminarTemplateLaboral.length - 1].setAttribute('name',`${nuevoNameBtnTempLab}`);
-        //this.cBxSeleccionTemLab = document.querySelectorAll('#checkBoxSaberSiEliminoSegmentoLaboral');
-       // inputsDatosPersonales.forEach(nuevoDato=>nuevoDato.addEventListener("click", () => {
     }
 }
 
@@ -480,8 +404,4 @@ botonEliminarTemplateLaboral.addEventListener('click', ()=>{
  btnNuevoTrabajo.addEventListener('click', ()=>{
     templateNuevoTrabajo.insertarNuevoTrabajo();
  })
-
-/*
- botonEliminarTemplateLaboral.addEventListener('click', ()=>{
-    templateNuevoTrabajo.eliminandoTemplateLaboral();  
-})*/
+*/
