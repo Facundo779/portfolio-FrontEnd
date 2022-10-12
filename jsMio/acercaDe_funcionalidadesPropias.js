@@ -1,4 +1,4 @@
-/*Editar campos de AcercaDe*/
+//Editar campos de AcercaDe
 const editDatosPersonal = document.getElementById('editarDatosPersonales');
 const nombreCompletoPortadaTarjeta = document.getElementsByClassName('.card-title');
 const tituloProfesionalPortadaTarjeta = document.getElementsByClassName('.card-text');
