@@ -115,6 +115,7 @@ const templateNuevoTrabajo = {
        this.conjuntoTemplateLaboral[this.conjuntoTemplateLaboral.length - 1].setAttribute('cbxname',`${nuevocBxNameTempLab}`);
        this.cBxSeleccionTemLab[this.cBxSeleccionTemLab.length - 1].setAttribute('name',`${nuevoName_cBx}`);*/
        botonEdicionLaboral.saberSiHayTemplate = true;
+       botonEdicionLaboral.actualizarEdicionCampoLaboralSi();
    }
 }
 
@@ -158,6 +159,28 @@ btnNuevoTrabajo.addEventListener('click', ()=>{
             //console.log('Code 1');
             //console.log(this.edicionHabilitadaLaboral);
         },
+        actualizarEdicionCampoLaboralSi: function(){
+            if(this.edicionHabilitadaLaboral){
+                botonEdicionLaboral.habilitarCamposDatosLaborales();
+                botonEdicionLaboral.saberSiModificoDatosLaborales();
+            }else{
+                console.log('hasta que no se habilite la edición...no se podrán modificar los campos');
+            }
+        },
+        saberSiModificoDatosLaborales: function(){
+            if(botonEdicionLaboral.edicionHabilitadaLaboral){
+                botonEdicionLaboral.inputsDatosLaborales.forEach((nuevoDatoLaboral)=>{
+                    nuevoDatoLaboral.addEventListener('click',()=>{
+                        //console.log('Code 2');
+                        //console.log(botonEdicionLaboral.edicionHabilitadaLaboral);
+                        botonEdicionLaboral.seleccionLaboral = nuevoDatoLaboral.getAttribute('name');
+                        botonEdicionLaboral.inputNuevosDatosLaborales(botonEdicionLaboral.seleccionLaboral);
+                    })
+                });
+             }else{
+                console.log('Se debe habilitar la edición para realizar modificaciones');
+             };
+        },
         campoLaboralAModificar: function(target_nameLab){
             document.querySelector(`[name="${target_nameLab}"]`).textContent=prompt('');
         },
@@ -189,17 +212,6 @@ editDatosLaborales.addEventListener('click', () =>{
     //console.log(botonEdicionLaboral.saberSiHayTemplate);
     botonEdicionLaboral.habilitarCamposDatosLaborales();
     //console.log(botonEdicionLaboral.edicionHabilitadaLaboral);
-    if(botonEdicionLaboral.edicionHabilitadaLaboral){
-        botonEdicionLaboral.inputsDatosLaborales.forEach((nuevoDatoLaboral)=>{
-            nuevoDatoLaboral.addEventListener('click',()=>{
-                //console.log('Code 2');
-                //console.log(botonEdicionLaboral.edicionHabilitadaLaboral);
-                botonEdicionLaboral.seleccionLaboral = nuevoDatoLaboral.getAttribute('name');
-                botonEdicionLaboral.inputNuevosDatosLaborales(botonEdicionLaboral.seleccionLaboral);
-            })
-        });
-     }else{
-        console.log('Se debe habilitar la edición para realizar modificaciones');
-     };
+    botonEdicionLaboral.saberSiModificoDatosLaborales();
  })
 
