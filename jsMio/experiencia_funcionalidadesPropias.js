@@ -182,7 +182,7 @@ btnNuevoTrabajo.addEventListener('click', ()=>{
         saberSiHayTemplate: false,
         inputsDatosLaborales: [],
         inputsDatosLaboralesFechas: [],
-        seleccionLaboral: [],
+        //seleccionLaboral: [],
         numDeTempsLabs_Iterar: [],
         //nameVarTempLab: [],
         habilitarCamposDatosLaborales: function(){
@@ -206,37 +206,41 @@ btnNuevoTrabajo.addEventListener('click', ()=>{
             if(botonEdicionLaboral.edicionHabilitadaLaboral){
                 botonEdicionLaboral.inputsDatosLaborales.forEach((nuevoDatoLaboral)=>{
                     nuevoDatoLaboral.addEventListener('click',()=>{
-                        //console.log('Code 2');
-                        //console.log(botonEdicionLaboral.edicionHabilitadaLaboral);
-                        botonEdicionLaboral.seleccionLaboral = nuevoDatoLaboral.getAttribute('name');
-                        botonEdicionLaboral.inputNuevosDatosLaborales(botonEdicionLaboral.seleccionLaboral);
+                        //[NO BORRAR]console.log('Code 2');
+                        //[NO BORRAR]console.log(botonEdicionLaboral.edicionHabilitadaLaboral);
+                        var seleccionLaboral = null;
+                        seleccionLaboral = nuevoDatoLaboral.getAttribute('nameb');
+                        //[NO BORRAR]console.log(seleccionLaboral);
+                        botonEdicionLaboral.inputNuevosDatosLaborales(seleccionLaboral);
                     })
                 });
              }else{
                 console.log('Se debe habilitar la edición para realizar modificaciones');
              };
         },
-        campoLaboralAModificar: function(target_nameLab){
-            document.querySelector(`[name="${target_nameLab}"]`).textContent=prompt('');
+        campoLaboralAModificar: function(target_nameBLab){
+            document.querySelector(`[nameb="${target_nameBLab}"]`).textContent=prompt('');
         },
         inputNuevosDatosLaborales: function(selecLab){
+            //[NO BORRAR]console.log(selecLab);
             if(this.edicionHabilitadaLaboral){
                 //console.log('Code 3');
                 //console.log(this.edicionHabilitadaLaboral);
                 this.numDeTempsLabs_Iterar = templateNuevoTrabajo.conjuntoTemplateLaboral.length;
                 var iterante_TemLab = 1;
                 for(iterante_TemLab; iterante_TemLab <= this.numDeTempsLabs_Iterar; iterante_TemLab++){
-                    templateNuevoTrabajo.conjuntoTemplateLaboral.forEach((nameTempLab)=>{
+                    templateNuevoTrabajo.conjuntoTemplateLaboral.forEach((nameTempLab)=>{ 
+                    //[NO BORRAR]console.log(nameTempLab.getAttribute('name'));
                         switch (nameTempLab.getAttribute('name')){
-                            case `templateLaboral + ${iterante_TemLab}`:
+                            case 'templateLaboral' + iterante_TemLab:
                                 switch (selecLab){
-                                    case "empresa":
+                                    case 'empresa' + iterante_TemLab:
                                         botonEdicionLaboral.campoLaboralAModificar(selecLab);
                                     break;    
-                                    case "tarea":
+                                    case 'tarea' + iterante_TemLab:
                                         botonEdicionLaboral.campoLaboralAModificar(selecLab);
                                     break;    
-                                    case "descripcionTrabajo":
+                                    case 'descripcionTrabajo' + iterante_TemLab:
                                         botonEdicionLaboral.campoLaboralAModificar(selecLab);
                                     break;    
                                 }
