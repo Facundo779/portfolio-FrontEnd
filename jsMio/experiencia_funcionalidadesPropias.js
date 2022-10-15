@@ -14,6 +14,9 @@ const templateNuevoTrabajo = {
    conjuntoTemplateLaboralEliminandose:[],
    i_labE:[],
    i_resetLab:[],
+   conjuntoEmpresasTempLab: [],
+   conjuntoTareaTempLab: [],
+   conjuntoDescripTrabajoTempLab: [],
 
    eliminandoTemplateLaboral : function(e_laboralAEliminar, e_conjuntoTL){
        /*
@@ -68,6 +71,9 @@ const templateNuevoTrabajo = {
    resetearAtributosDeTempLab : function(){ 
     this.conjuntoTemplateLaboral = document.querySelectorAll('#templateLaborales');
     this.cBxSeleccionTemLab = document.querySelectorAll('#checkBoxSaberSiEliminoSegmentoLaboral');
+    this.conjuntoEmpresasTempLab = document.querySelectorAll('[name="empresa"]');
+    this.conjuntoTareaTempLab = document.querySelectorAll('[name="tarea"]');
+    this.conjuntoDescripTrabajoTempLab = document.querySelectorAll('[name="descripcionTrabajo"]');
     console.log('templates laborales que no se eliminan:');
     console.log(this.conjuntoTemplateLaboral);
     //this.i_resetLab = this.conjuntoTemplateLaboral.length;
@@ -81,6 +87,24 @@ const templateNuevoTrabajo = {
         e_labResetAttrib.setAttribute('cbxname',`${resetNuevocBxNameTempLab}`);
     });
     this.iterante = 1;
+    this.conjuntoEmpresasTempLab.forEach((e_empresaTempLabResetAttrib)=>{
+        const resetNuevoNameBEmpresaTempLab = 'empresa' + this.iterante;
+        this.iterante = this.iterante += 1; 
+        e_empresaTempLabResetAttrib.setAttribute('nameb',`${resetNuevoNameBEmpresaTempLab}`);
+    });
+    this.iterante = 1;
+    this.conjuntoTareaTempLab.forEach((e_tareaTempLabResetAttrib)=>{
+        const resetNuevoNameBtareaTempLab = 'tarea' + this.iterante;
+        this.iterante = this.iterante += 1; 
+        e_tareaTempLabResetAttrib.setAttribute('nameb',`${resetNuevoNameBtareaTempLab}`);
+    });
+    this.iterante = 1;
+    this.conjuntoDescripTrabajoTempLab.forEach((e_descripcionTrabajoTempLabResetAttrib)=>{
+        const resetNuevoNameBdescripTrabTempLab = 'empresa' + this.iterante;
+        this.iterante = this.iterante += 1; 
+        e_descripcionTrabajoTempLabResetAttrib.setAttribute('nameb',`${resetNuevoNameBdescripTrabTempLab}`);
+    });
+    this.iterante = 1;
     this.cBxSeleccionTemLab.forEach((e_labResetAttribCbxSelect)=>{
         const resetNuevoName_cBx = 'cBxSegmentoLaboral' + this.iterante;
         e_labResetAttribCbxSelect.setAttribute('name',`${resetNuevoName_cBx}`);
@@ -92,8 +116,14 @@ const templateNuevoTrabajo = {
     const nuevoNameTempLab = 'templateLaboral' + this.iterante;
     const nuevocBxNameTempLab = 'cBxSegmentoLaboral' + this.iterante;
     const nuevoName_cBx = 'cBxSegmentoLaboral' + this.iterante;
+    const nuevoNameB_empresa = 'empresa' + this.iterante;
+    const nuevoNameB_tarea = 'tarea' + this.iterante;
+    const nuevoNameB_descripTarea = 'descripcionTrabajo' + this.iterante;
     this.conjuntoTemplateLaboral[this.conjuntoTemplateLaboral.length - 1].setAttribute('name',`${nuevoNameTempLab}`);
     this.conjuntoTemplateLaboral[this.conjuntoTemplateLaboral.length - 1].setAttribute('cbxname',`${nuevocBxNameTempLab}`);
+    this.conjuntoEmpresasTempLab[this.conjuntoEmpresasTempLab.length - 1].setAttribute('nameb',`${nuevoNameB_empresa}`);
+    this.conjuntoTareaTempLab[this.conjuntoTareaTempLab.length - 1].setAttribute('nameb',`${nuevoNameB_tarea}`);
+    this.conjuntoDescripTrabajoTempLab[this.conjuntoDescripTrabajoTempLab.length - 1].setAttribute('nameb',`${nuevoNameB_descripTarea}`);
     this.cBxSeleccionTemLab[this.cBxSeleccionTemLab.length - 1].setAttribute('name',`${nuevoName_cBx}`);
    },
    insertarNuevoTrabajo : function(){
@@ -105,6 +135,9 @@ const templateNuevoTrabajo = {
        nuevoTemplateTrabajo.appendChild(clonarTemplateTrabajo);
        modalBdyExperiencia.appendChild(nuevoTemplateTrabajo);
        this.conjuntoTemplateLaboral = document.querySelectorAll('#templateLaborales');
+       this.conjuntoEmpresasTempLab = document.querySelectorAll('[name="empresa"]');
+       this.conjuntoTareaTempLab = document.querySelectorAll('[name="tarea"]');
+       this.conjuntoDescripTrabajoTempLab = document.querySelectorAll('[name="descripcionTrabajo"]');
        this.cBxSeleccionTemLab = document.querySelectorAll('#checkBoxSaberSiEliminoSegmentoLaboral');
        templateNuevoTrabajo.setearAtributosDeTempLab();
        /*this.iterante = this.iterante += 1; 
@@ -150,6 +183,8 @@ btnNuevoTrabajo.addEventListener('click', ()=>{
         inputsDatosLaborales: [],
         inputsDatosLaboralesFechas: [],
         seleccionLaboral: [],
+        numDeTempsLabs_Iterar: [],
+        //nameVarTempLab: [],
         habilitarCamposDatosLaborales: function(){
             this.inputsDatosLaborales = document.querySelectorAll('#inputExperienciaLaboral');
             this.inputsDatosLaboralesFechas = document.querySelectorAll('[name="fechaDesempeño"]');
@@ -188,16 +223,26 @@ btnNuevoTrabajo.addEventListener('click', ()=>{
             if(this.edicionHabilitadaLaboral){
                 //console.log('Code 3');
                 //console.log(this.edicionHabilitadaLaboral);
-                switch (selecLab){
-                    case "empresa":
-                        botonEdicionLaboral.campoLaboralAModificar(selecLab);
-                    break;    
-                    case "tarea":
-                        botonEdicionLaboral.campoLaboralAModificar(selecLab);
-                    break;    
-                    case "descripcionTrabajo":
-                        botonEdicionLaboral.campoLaboralAModificar(selecLab);
-                    break;    
+                this.numDeTempsLabs_Iterar = templateNuevoTrabajo.conjuntoTemplateLaboral.length;
+                var iterante_TemLab = 1;
+                for(iterante_TemLab; iterante_TemLab <= this.numDeTempsLabs_Iterar; iterante_TemLab++){
+                    templateNuevoTrabajo.conjuntoTemplateLaboral.forEach((nameTempLab)=>{
+                        switch (nameTempLab.getAttribute('name')){
+                            case `templateLaboral + ${iterante_TemLab}`:
+                                switch (selecLab){
+                                    case "empresa":
+                                        botonEdicionLaboral.campoLaboralAModificar(selecLab);
+                                    break;    
+                                    case "tarea":
+                                        botonEdicionLaboral.campoLaboralAModificar(selecLab);
+                                    break;    
+                                    case "descripcionTrabajo":
+                                        botonEdicionLaboral.campoLaboralAModificar(selecLab);
+                                    break;    
+                                }
+                            break;
+                        }   
+                    });
                 }
             }else{
                 alert('Debe hacer click en el botón de editar sección para modificar los campos');
