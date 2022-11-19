@@ -172,7 +172,7 @@ a .githubsvg {
    display: block;
 }
 .descripcionBtnEliminarSegmentoEducacion:hover::before{
-   content: "Eliminar estudio";
+   content: "Eliminar estudio seleccionados";
    white-space: nowrap;
 }
 .descripcionBtnEliminarSegmentoLaboral:hover::before{
@@ -180,7 +180,7 @@ a .githubsvg {
    white-space: nowrap;
 }
 .descripcionBtnEliminarSegmentoProyecto:hover::before{
-   content: "Eliminar proyecto";
+   content: "Eliminar proyecto seleccionados";
    white-space: nowrap;
 }
 /*Estilos de modals*/

@@ -386,20 +386,21 @@
                           <div class="modal-content">
                               <div class="modal-header">
                                   <h3 class="modal-title" id="titulosObtenidos">Educación</h3>
-                                  <button class="botonEditar botonEdicionOculto" type="button" id="editarTitulos" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
+                                  <button class="botonEditar botonEdicionActivo" type="button" id="editarTitulos" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
                                   <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                               </div>
-                              <div class="modal-body">
-
-                              <!--<template id="templateEducacion">--> 
-                              <div class="border rounded p-1 border-warning" id="templateEducacion" name="templateEducacion1">
-                                <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoEducacion" type="button" id="botonsaberSiEliminoSegmentoEducacion"> X</button>
+                              <div class="modal-body" id="modalBodyEducacion">
+                              <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoEducacion" type="button" id="botonsaberSiEliminoSegmentoEducacion"> X</button>
+                              <template id="templateEducacion">
+                              <div class="border rounded p-1 border-warning" id="templateEducaciones" name="templateEducacion" cbxname="cBxSegmentoEducacion">
+                                <input type="checkbox" id="checkBoxSaberSiEliminoSegmentoEducacion" name="cBxSegmentoEducacion">
+                                <!--<button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoEducacion" type="button" id="botonsaberSiEliminoSegmentoEducacion"> X</button> -->
                                 <div class="row" id="filaModalEducacion">
                                   <div class="col" id="col1DefilaModalEducacion">
                                     <label for="institucion" class="form-label">Institución: </label>
                                   </div>
                                   <div class="col" id="col2DefilaModalEducacion">
-                                    <p class="text border rounded-end border-dark" id="institucion" name="institucion">Complete aquí</p>
+                                    <p class="text border rounded-end border-dark" id="inputEducacion" name="institucion" nameb="institucion">Complete aquí</p>
                                   </div>
                                 </div>
                                 <div class="row" id="filaModalEducacion">
@@ -407,7 +408,7 @@
                                     <label for="carrera" class="form-label">Carrera: </label>
                                   </div>
                                   <div class="col" id="col2DefilaModalEducacion">
-                                    <p class="text border rounded-end border-dark" id="carrera" name="carrera">Complete aquí</p>
+                                    <p class="text border rounded-end border-dark" id="inputEducacion" name="carrera" nameb="carrera">Complete aquí</p>
                                   </div>
                                 </div>
                                   <div class="row">
@@ -415,33 +416,33 @@
                                       <label for="estudioEnCurso" class="form-label">Cursando actualmente: </label>
                                     </div>
                                     <div class="col">
-                                      <input type="checkbox" class="form-check-input" id="estudiaActualmenteCBox">
+                                      <input type="checkbox" class="form-check-input" id="estudiaActualmenteCBox" name="cBx_estudiaActualmente">
                                     </div>
                                   </div>
-                                <div class="row habilitarTituloProfesionalActivo" id="filaModalEducacionTituloProfesional">
+                                <div class="row habilitarTituloProfesionalActivo" id="filaModalEducacionTituloProfesional" name="filaModalEducacionTituloProfesional" nameb="filaModalEducacionTituloProfesional">
                                   <div class="col" id="col1DefilaModalEducacion">
                                     <label for="tituloProfesional" class="form-label">Título: </label> 
                                   </div>
                                   <div class="col" id="col2DefilaModalEducacion">
-                                    <p class="text border rounded-end border-dark" id="tituloProfesional" name="tituloProfesional">Complete aquí</p>
+                                    <p class="text border rounded-end border-dark" id="inputEducacion" name="tituloProfesional" nameb="tituloProfesional">Complete aquí</p>
                                   </div>
                                 </div>
-                                <div class="row habilitarTituloProfesionalActivo" id="filaModalEducacionTituloFechaObtencion">
+                                <div class="row habilitarTituloProfesionalActivo" id="filaModalEducacionTituloFechaObtencion" name="filaModalEducacionTituloFechaObtencion" nameb="filaModalEducacionTituloFechaObtencion">
                                     <div class="row">
                                       <div class="col">
                                         <label for="col" class="form-label">Fecha de obtención del título: </label>
                                       </div> 
-                                      <div class="col"><input type="date" class="text" id="fechaObtencionTitulo" name="fechaObtencionTitulo" value=""
+                                      <div class="col"><input type="date" class="text" id="inputEducacion" name="fechaObtencionTitulo" nameb="fechaObtencionTitulo" value=""
                                           min="1900-01-01" max="3000-12-31">
                                       </div>
                                     </div>
                                 </div>
                               </div><!--Cierre filaTemplateModalEducacion-->
-                              <!--</template>-->
+                              </template>
 
                               </div> <!--Cierre ModalBody-->
                               <div class="modal-footer">
-                                <button class="btn btn-primary translate-middle-x botonAgregarTrabajoActivo" id="btnAgregarTrabajo">
+                                <button class="btn btn-primary translate-middle-x botonAgregarTrabajoActivo" id="btnAgregarEducacion">
                                   Agregar estudio
                                 </button>
                                 <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>
@@ -466,7 +467,7 @@
                           <div class="modal-content">
                               <div class="modal-header">
                                   <h3 class="modal-title" id="proyectos">Proyectos</h3>
-                                  <button class="botonEditar botonEdicionOculto" type="button" id="editarProyectos" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
+                                  <button class="botonEditar botonEdicionActivo" type="button" id="editarProyectos" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
                                   <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                               </div>
                               <div class="modal-body">
