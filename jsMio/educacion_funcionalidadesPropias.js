@@ -11,6 +11,7 @@ const nuevoTemplateEducacion = {
    cBxSeleccionTemEdu:[], 
    cBxSeleccionados:[],
    cBx_siEstudiaActualmente: [],
+   cBx_nameb_siEstudiaActualmente: [],
    e_educacionNoSeleccionados:[],
    conjuntoTemplateEducacionEliminandose:[],
    i_eduE:[],
@@ -38,14 +39,18 @@ const nuevoTemplateEducacion = {
             this.filamodalTitProf.forEach((e_titProf)=>{
                 switch(e_titProf.getAttribute('nameb')){
                     case 'filaModalEducacionTituloProfesional' + `${e_iterantefilamodal1}`:
+                        if(e_targetTitProf.getAttribute('nameb') === `${e_iterantefilamodal1}`){
                         document.querySelector(`[nameb="${e_titProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalActivo','habilitarTituloProfesionalOculto');
+                        }else{console.log("tenes un error1")};
                     break;
                 };
             });
             this.filamodalObtTitProf.forEach((e_obtTitProf)=>{
                 switch(e_obtTitProf.getAttribute('nameb')){
                     case 'filaModalEducacionTituloFechaObtencion' + `${e_iterantefilamodal1}`:
+                        if(e_targetTitProf.getAttribute('nameb') === `${e_iterantefilamodal1}`){
                     document.querySelector(`[nameb="${e_obtTitProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalActivo','habilitarTituloProfesionalOculto');
+                        }else{console.log("tenes un error2")};
                     break;
                 };
             });
@@ -60,14 +65,18 @@ const nuevoTemplateEducacion = {
             this.filamodalTitProf.forEach((e_titProf)=>{
                 switch(e_titProf.getAttribute('nameb')){
                     case 'filaModalEducacionTituloProfesional' + `${e_iterantefilamodal2}`:
+                        if(e_targetTitProf.getAttribute('nameb') === `${e_iterantefilamodal2}`){
                         document.querySelector(`[nameb="${e_titProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalOculto','habilitarTituloProfesionalActivo');
+                        }else{console.log("tenes un error3")};
                     break;
                 };
             });
             this.filamodalObtTitProf.forEach((e_obtTitProf)=>{
                 switch(e_obtTitProf.getAttribute('nameb')){
                     case 'filaModalEducacionTituloFechaObtencion' + `${e_iterantefilamodal2}`:
+                        if(e_targetTitProf.getAttribute('nameb') === `${e_iterantefilamodal2}`){
                         document.querySelector(`[nameb="${e_obtTitProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalOculto','habilitarTituloProfesionalActivo');
+                        }else{console.log("tenes un error4")};
                     break;
                 };
             });
@@ -171,7 +180,7 @@ const nuevoTemplateEducacion = {
     });
     this.iterante = 1;
     this.cBx_siEstudiaActualmente.forEach((e_ResetAttribCbxSiEstudiaActualmente)=>{
-        const resetcBxEstudiaActualmente = 'cBx_estudiaActualmente' + this.iterante;
+        const resetcBxEstudiaActualmente = /*'cBx_estudiaActualmente' +*/ this.iterante;
         e_ResetAttribCbxSiEstudiaActualmente.setAttribute('nameb',`${resetcBxEstudiaActualmente}`);
         this.iterante = this.iterante += 1;
     });
@@ -203,6 +212,7 @@ const nuevoTemplateEducacion = {
     const nuevoNameB_carrera = 'carrera' + this.iterante;
     const nuevoNameB_Titulo = 'tituloProfesional' + this.iterante;
     const nuevo_cBxEstudiaActualmente = 'cBx_estudiaActualmente' + this.iterante;
+    const nuevo_cBxNamebEstudiaActualmente = /*'cBx_estudiaActualmente' +*/ this.iterante;
     const nuevoNameFechaObtTit = 'fechaObtencionTitulo' + this.iterante;
     const nuevoNameFilaTitProf = 'filaModalEducacionTituloProfesional' + this.iterante;
     const nuevoNameFilaFechaObtTit = 'filaModalEducacionTituloFechaObtencion' + this.iterante;
@@ -213,6 +223,7 @@ const nuevoTemplateEducacion = {
     this.conjuntoTituloProfesionalTempEdu[this.conjuntoTituloProfesionalTempEdu.length - 1].setAttribute('nameb',`${nuevoNameB_Titulo}`);
     this.cBxSeleccionTemEdu[this.cBxSeleccionTemEdu.length - 1].setAttribute('name',`${nuevoNameEdu_cBx}`);
     this.cBx_siEstudiaActualmente[this.cBx_siEstudiaActualmente.length - 1].setAttribute('name',`${nuevo_cBxEstudiaActualmente}`);
+    this.cBx_siEstudiaActualmente[this.cBx_siEstudiaActualmente.length - 1].setAttribute('nameb',`${nuevo_cBxNamebEstudiaActualmente}`);
     this.fechaObtencionTitulo[this.fechaObtencionTitulo.length - 1].setAttribute('nameb',`${nuevoNameFechaObtTit}`);
     this.filamodalTitProf[this.filamodalTitProf.length - 1].setAttribute('nameb',`${nuevoNameFilaTitProf}`);
     this.filamodalObtTitProf[this.filamodalObtTitProf.length - 1].setAttribute('nameb',`${nuevoNameFilaFechaObtTit}`);
@@ -231,6 +242,7 @@ const nuevoTemplateEducacion = {
        this.conjuntoTituloProfesionalTempEdu = document.querySelectorAll('[name="tituloProfesional"]');
        this.cBxSeleccionTemEdu = document.querySelectorAll('#checkBoxSaberSiEliminoSegmentoEducacion');
        this.cBx_siEstudiaActualmente = document.querySelectorAll('#estudiaActualmenteCBox');
+       this.cBx_nameb_siEstudiaActualmente = document.querySelectorAll('[nameb="estudiaActualmenteCBox"]');
        this.fechaObtencionTitulo = document.querySelectorAll('[name="fechaObtencionTitulo"]');
        this.filamodalTitProf = document.querySelectorAll('#filaModalEducacionTituloProfesional');
        this.filamodalObtTitProf = document.querySelectorAll('#filaModalEducacionTituloFechaObtencion');
