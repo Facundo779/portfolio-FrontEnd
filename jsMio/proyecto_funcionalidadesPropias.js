@@ -1,4 +1,5 @@
 //Acciones en fotos de proyecto
+/*
 const agregarFotoProyecto = document.querySelector('#botonsaberSiAgregoFotoProyecto');
 const ocultarFotoProyecto = document.querySelector('#botonsaberSiOcultoFotoProyecto');
 const eliminarProyecto = document.querySelector('#botonsaberSiEliminoSegmentoProyecto');
@@ -24,3 +25,4 @@ ocultarFotoProyecto.addEventListener('click', ()=>{
 eliminarProyecto.addEventListener('click', ()=>{
     habilitarCargarProyecto.eliminarProyecto();
 })
+*/

@@ -361,7 +361,7 @@
                               </template> 
                               </div> <!--Cierre ModalBody-->
                               <div class="modal-footer">
-                                <button class="btn btn-primary translate-middle-x botonAgregarTrabajoActivo" id="btnAgregarTrabajo">
+                                <button class="btn btn-primary translate-middle-x botonAgregarActivo" id="btnAgregarTrabajo">
                                   Agregar trabajo
                                 </button>
                                 <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>
@@ -442,7 +442,7 @@
 
                               </div> <!--Cierre ModalBody-->
                               <div class="modal-footer">
-                                <button class="btn btn-primary translate-middle-x botonAgregarTrabajoActivo" id="btnAgregarEducacion">
+                                <button class="btn btn-primary translate-middle-x botonAgregarActivo" id="btnAgregarEducacion">
                                   Agregar estudio
                                 </button>
                                 <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>
@@ -471,15 +471,16 @@
                                   <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                               </div>
                               <div class="modal-body">
-                                <!-- <template id="templateProyecto"> -->
-                                  <div class="border rounded p-1 border-warning" id="templateProyecto" name="templateProyecto1">
-                                    <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoProyecto" type="button" id="botonsaberSiEliminoSegmentoProyecto"> X</button>
+                                <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoProyecto" type="button" id="botonsaberSiEliminoSegmentoProyecto"> X</button>
+                                <template id="templateProyecto"> 
+                                  <div class="border rounded p-1 border-warning" id="templateProyectos" name="templateProyecto">
+                                    <!--<button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoProyecto" type="button" id="botonsaberSiEliminoSegmentoProyecto"> X</button> -->
                                     <div class="row" id="filaModalProyecto">
                                       <div class="col" id="col1DefilaModalProyecto">
                                         <label for="nombreProyecto" class="form-label">Nombre del Proyecto: </label> 
                                       </div>
                                       <div class="col" id="col2DefilaModalProyecto">
-                                        <p class="text border rounded-end border-dark" id="nombreProyecto" name="nombreProyecto">Complete aquí</p>
+                                        <p class="text border rounded-end border-dark" id="nombreProyectos" name="nombreProyecto" nameb="nombreProyecto">Complete aquí</p>
                                       </div>
                                     </div>
                                     <div class="row" id="filaModalProyecto">
@@ -496,7 +497,7 @@
                                         <label for="tarea" class="form-label">Descripción del Proyecto: </label> 
                                       </div>
                                       <div class="row" id="col2DefilaModalProyecto">
-                                        <p class="text col-10 offset-1 border rounded-bottom border-dark" row="1" id="DescripcionTrabajo" name="DescripcionTrabajo">Complete aquí</p>
+                                        <p class="text col-10 offset-1 border rounded-bottom border-dark" row="1" id="descripcionProyecto" name="descripcionProyecto" nameb="descripcionProyecto">Complete aquí</p>
                                       </div>
                                     </div>
                                     <div class="row" id="filaModalExperiencia">
@@ -504,7 +505,7 @@
                                         <label for="enlaceAProyecto" class="form-label">Link para demostrar proyecto: </label> 
                                       </div>
                                       <div class="col" id="col2DefilaModalProyecto">
-                                        <p class="text border rounded-end border-dark" id="enlaceAProyecto" name="enlaceAProyecto"><a href="">Enlace al proyecto referido</a></p>
+                                        <p class="text border rounded-end border-dark" id="enlaceAProyecto" name="enlaceAProyecto" nameb="enlaceAProyecto"><a href="">Enlace al proyecto referido</a></p>
                                       </div>
                                     </div>
                                     <div class="row" id="filaModalProyecto">
@@ -512,16 +513,16 @@
                                         <label for="desearAdjuntarFotoProyecto" class="form-label">¿Desea adjuntar foto del Proyecto?</label>
                                         <button class="btn btn-outline-warning ms-3 btn-sm" type="button" id="botonsaberSiAgregoFotoProyecto">Si</button>
                                       </div>
-                                      <div class="row input-group agregarFotoProyectoOculto" id="filaModalProyectoAdjFoto" name="filaModalProyectoAdjFoto1">
+                                      <div class="row input-group agregarFotoProyectoOculto" id="filaModalProyectoAdjFoto" name="filaModalProyectoAdjFoto">
                                         <div class="col">
                                           <button class="btn btn-outline-danger ms-3 btn-sm descripcionBtnOcultar" type="button" id="botonsaberSiOcultoFotoProyecto"> <img src="img_bootstrap/eye-slash.svg"></button>
                                           <label for="fotoProyecto" class="form-label">Adjunte foto:</label>
-                                          <input type="file" class="form-control" id="fotoProyecto" name="fotoProyecto" disabled>
+                                          <input type="file" class="form-control" id="fotoProyecto" name="fotoProyecto" nameb="fotoProyecto" disabled>
                                         </div>
                                       </div>
                                     </div>
                                  </div><!--Cierre filaTemplateModalProyecto-->
-                               <!-- </template> -->
+                               </template>
                                <!--Template para agregar fotos-->
                                <template id="templateAgregarFotoProyecto">
                                 <div class="row">
@@ -533,7 +534,7 @@
                                <!--Cierre de template para agregar fotos-->                                    
                               </div> <!--Cierre ModalBody-->
                               <div class="modal-footer">
-                                <button class="btn btn-primary translate-middle-x botonAgregarTrabajoActivo" id="btnAgregarTrabajo">
+                                <button class="btn btn-primary translate-middle-x botonAgregarActivo" id="btnAgregarProyecto">
                                   Agregar proyecto
                                 </button>
                                   <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>

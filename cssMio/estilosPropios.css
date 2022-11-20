@@ -149,10 +149,10 @@ a .githubsvg {
 .inputEdicionDeSeccionesActivo{
    display:block;
 }
-.botonAgregarTrabajoOculto{
+.botonAgregarOculto{
    display:none;
 }
-.botonAgregarTrabajoActivo{
+.botonAgregarActivo{
    display:block;
 }
 .agregarFotoProyectoOculto{

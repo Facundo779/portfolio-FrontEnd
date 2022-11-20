@@ -38,14 +38,14 @@ const nuevoTemplateEducacion = {
             this.filamodalTitProf.forEach((e_titProf)=>{
                 switch(e_titProf.getAttribute('nameb')){
                     case 'filaModalEducacionTituloProfesional' + `${e_iterantefilamodal1}`:
-                        document.querySelector(`[name="${e_titProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalActivo','habilitarTituloProfesionalOculto');
+                        document.querySelector(`[nameb="${e_titProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalActivo','habilitarTituloProfesionalOculto');
                     break;
                 };
             });
             this.filamodalObtTitProf.forEach((e_obtTitProf)=>{
                 switch(e_obtTitProf.getAttribute('nameb')){
                     case 'filaModalEducacionTituloFechaObtencion' + `${e_iterantefilamodal1}`:
-                        document.querySelector(`[name="${e_obtTitProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalActivo','habilitarTituloProfesionalOculto');
+                    document.querySelector(`[nameb="${e_obtTitProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalActivo','habilitarTituloProfesionalOculto');
                     break;
                 };
             });
@@ -60,14 +60,14 @@ const nuevoTemplateEducacion = {
             this.filamodalTitProf.forEach((e_titProf)=>{
                 switch(e_titProf.getAttribute('nameb')){
                     case 'filaModalEducacionTituloProfesional' + `${e_iterantefilamodal2}`:
-                        document.querySelector(`[name="${e_titProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalOculto','habilitarTituloProfesionalActivo');
+                        document.querySelector(`[nameb="${e_titProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalOculto','habilitarTituloProfesionalActivo');
                     break;
                 };
             });
             this.filamodalObtTitProf.forEach((e_obtTitProf)=>{
                 switch(e_obtTitProf.getAttribute('nameb')){
                     case 'filaModalEducacionTituloFechaObtencion' + `${e_iterantefilamodal2}`:
-                        document.querySelector(`[name="${e_obtTitProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalOculto','habilitarTituloProfesionalActivo');
+                        document.querySelector(`[nameb="${e_obtTitProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalOculto','habilitarTituloProfesionalActivo');
                     break;
                 };
             });
