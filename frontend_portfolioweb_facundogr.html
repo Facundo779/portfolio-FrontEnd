@@ -470,17 +470,18 @@
                                   <button class="botonEditar botonEdicionActivo" type="button" id="editarProyectos" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
                                   <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
                               </div>
-                              <div class="modal-body">
-                                <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoProyecto" type="button" id="botonsaberSiEliminoSegmentoProyecto"> X</button>
+                              <div class="modal-body" id="modalBodyProyecto">
+                                <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoProyecto" type="button" id="botonSaberSiEliminoSegmentoProyecto"> X</button>
                                 <template id="templateProyecto"> 
                                   <div class="border rounded p-1 border-warning" id="templateProyectos" name="templateProyecto">
+                                    <input type="checkbox" id="checkBoxSaberSiEliminoSegmentoProyecto" name="cBxSegmentoProyecto">
                                     <!--<button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoProyecto" type="button" id="botonsaberSiEliminoSegmentoProyecto"> X</button> -->
                                     <div class="row" id="filaModalProyecto">
                                       <div class="col" id="col1DefilaModalProyecto">
                                         <label for="nombreProyecto" class="form-label">Nombre del Proyecto: </label> 
                                       </div>
                                       <div class="col" id="col2DefilaModalProyecto">
-                                        <p class="text border rounded-end border-dark" id="nombreProyectos" name="nombreProyecto" nameb="nombreProyecto">Complete aquí</p>
+                                        <p class="text border rounded-end border-dark" id="inputProyectos" name="nombreProyecto" nameb="nombreProyecto">Complete aquí</p>
                                       </div>
                                     </div>
                                     <div class="row" id="filaModalProyecto">
@@ -497,41 +498,33 @@
                                         <label for="tarea" class="form-label">Descripción del Proyecto: </label> 
                                       </div>
                                       <div class="row" id="col2DefilaModalProyecto">
-                                        <p class="text col-10 offset-1 border rounded-bottom border-dark" row="1" id="descripcionProyecto" name="descripcionProyecto" nameb="descripcionProyecto">Complete aquí</p>
+                                        <p class="text col-10 offset-1 border rounded-bottom border-dark" row="1" id="inputProyectos" name="descripcionProyecto" nameb="descripcionProyecto">Complete aquí</p>
                                       </div>
                                     </div>
                                     <div class="row" id="filaModalExperiencia">
                                       <div class="col" id="col1DefilaModalProyecto">
                                         <label for="enlaceAProyecto" class="form-label">Link para demostrar proyecto: </label> 
+                                        <p><a href=""  name="link_url_proyecto" nameb="link_url_proyecto">Enlace al proyecto referido</a></p>
                                       </div>
                                       <div class="col" id="col2DefilaModalProyecto">
-                                        <p class="text border rounded-end border-dark" id="enlaceAProyecto" name="enlaceAProyecto" nameb="enlaceAProyecto"><a href="">Enlace al proyecto referido</a></p>
+                                        <p class="text border rounded-end border-dark" id="inputProyectos" name="enlaceAProyecto" nameb="enlaceAProyecto">Adjunte su link <br> Click aquí!</p>
                                       </div>
                                     </div>
                                     <div class="row" id="filaModalProyecto">
                                       <div class="col input-group" id="col1DefilaModalProyecto">
                                         <label for="desearAdjuntarFotoProyecto" class="form-label">¿Desea adjuntar foto del Proyecto?</label>
-                                        <button class="btn btn-outline-warning ms-3 btn-sm" type="button" id="botonsaberSiAgregoFotoProyecto">Si</button>
+                                        <button class="btn btn-outline-warning ms-3 btn-sm" type="button" id="botonsaberSiAgregoFotoProyecto" name="filaModalProyectoAdjFoto" nameb="filaModalProyectoAdjFoto">Si</button>
                                       </div>
-                                      <div class="row input-group agregarFotoProyectoOculto" id="filaModalProyectoAdjFoto" name="filaModalProyectoAdjFoto">
+                                      <div class="row input-group agregarFotoProyectoOculto" id="filaModalProyectoAdjFoto" name="filaModalProyectoAdjFoto" nameb="filaModalProyectoAdjFoto">
                                         <div class="col">
-                                          <button class="btn btn-outline-danger ms-3 btn-sm descripcionBtnOcultar" type="button" id="botonsaberSiOcultoFotoProyecto"> <img src="img_bootstrap/eye-slash.svg"></button>
+                                          <button class="btn btn-outline-danger ms-3 btn-sm descripcionBtnOcultar" type="button" id="botonsaberSiOcultoFotoProyecto" name="filaModalProyectoAdjFoto" nameb="filaModalProyectoAdjFoto"> <img src="img_bootstrap/eye-slash.svg"></button>
                                           <label for="fotoProyecto" class="form-label">Adjunte foto:</label>
                                           <input type="file" class="form-control" id="fotoProyecto" name="fotoProyecto" nameb="fotoProyecto" disabled>
                                         </div>
                                       </div>
                                     </div>
                                  </div><!--Cierre filaTemplateModalProyecto-->
-                               </template>
-                               <!--Template para agregar fotos-->
-                               <template id="templateAgregarFotoProyecto">
-                                <div class="row">
-                                      <div class="col">
-                                        <img src="...">
-                                      </div>
-                                </div>
-                              </template>
-                               <!--Cierre de template para agregar fotos-->                                    
+                               </template>                                    
                               </div> <!--Cierre ModalBody-->
                               <div class="modal-footer">
                                 <button class="btn btn-primary translate-middle-x botonAgregarActivo" id="btnAgregarProyecto">

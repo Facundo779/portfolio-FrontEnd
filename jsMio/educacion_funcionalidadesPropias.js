@@ -41,7 +41,7 @@ const nuevoTemplateEducacion = {
                     case 'filaModalEducacionTituloProfesional' + `${e_iterantefilamodal1}`:
                         if(e_targetTitProf.getAttribute('nameb') === `${e_iterantefilamodal1}`){
                         document.querySelector(`[nameb="${e_titProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalActivo','habilitarTituloProfesionalOculto');
-                        }else{console.log("tenes un error1")};
+                        }else{};
                     break;
                 };
             });
@@ -50,7 +50,7 @@ const nuevoTemplateEducacion = {
                     case 'filaModalEducacionTituloFechaObtencion' + `${e_iterantefilamodal1}`:
                         if(e_targetTitProf.getAttribute('nameb') === `${e_iterantefilamodal1}`){
                     document.querySelector(`[nameb="${e_obtTitProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalActivo','habilitarTituloProfesionalOculto');
-                        }else{console.log("tenes un error2")};
+                        }else{};
                     break;
                 };
             });
@@ -67,7 +67,7 @@ const nuevoTemplateEducacion = {
                     case 'filaModalEducacionTituloProfesional' + `${e_iterantefilamodal2}`:
                         if(e_targetTitProf.getAttribute('nameb') === `${e_iterantefilamodal2}`){
                         document.querySelector(`[nameb="${e_titProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalOculto','habilitarTituloProfesionalActivo');
-                        }else{console.log("tenes un error3")};
+                        }else{};
                     break;
                 };
             });
@@ -76,7 +76,7 @@ const nuevoTemplateEducacion = {
                     case 'filaModalEducacionTituloFechaObtencion' + `${e_iterantefilamodal2}`:
                         if(e_targetTitProf.getAttribute('nameb') === `${e_iterantefilamodal2}`){
                         document.querySelector(`[nameb="${e_obtTitProf.getAttribute('nameb')}"]`).classList.replace('habilitarTituloProfesionalOculto','habilitarTituloProfesionalActivo');
-                        }else{console.log("tenes un error4")};
+                        }else{};
                     break;
                 };
             });
