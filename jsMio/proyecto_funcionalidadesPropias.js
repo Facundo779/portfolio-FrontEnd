@@ -57,7 +57,7 @@ const templateNuevoProyecto = {
        var iterante_ProE = 1;
        for(iterante_ProE; iterante_ProE <= this.i_labP; iterante_ProE++){
            switch(e_ProE.getAttribute('name')){              
-               case 'cBxSegmentoLaboral'+`${iterante_ProE}`:
+               case 'cBxSegmentoProyecto'+`${iterante_ProE}`:
                    e_conjuntoTP.forEach((e_cBxName)=>{if(e_cBxName.getAttribute('cbxname') === e_ProE.getAttribute('name')){
                    this.conjuntoTemplateProyectoEliminandose.push(e_cBxName)}});
                break;    
