@@ -163,6 +163,21 @@ document.getElementById('cerrarSesion').addEventListener('click', (e_sesionClose
     }
     
 })
+/* Introducir nueva red social */
+const redesSociales = document.getElementById('editarRedesSociales');
+
+const intrNuevaRedSocial = {
+    editorPrompt : function(){
+        
+        );
+    }
+}
+
+
+redesSociales.addEventListener('click', () =>{
+
+})
+
 
 /*
 [EL SIGUIENTE CÓDIGO ESTÁ DESHABILITADO PERO QUEDA DE RESPALDO]
