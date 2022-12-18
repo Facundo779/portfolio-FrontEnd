@@ -1,1 +1,82 @@
-<p>experiencia works!</p>
+<div class="card border-primary text-center" id="card1" style="width: 10rem;">
+    <div class="card-header">Experiencia</div>                
+    <img src="imagenes_frontend/" class="card-img-top">
+    <div class="card-body">
+        <h4 class="card-title">...</h4>
+        <p class="card-text">...</p>
+        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalExperiencia">Ver más...</a>
+        <div class="modal fade" id="modalExperiencia">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="trabajosDesempeñados">Trabajos en los cuales me he desempeñado</h3>
+                        <button class="botonEditar botonEdicionActivo" type="button" id="editarExperiencia" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
+                        <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" id="modalBodyLaboral">
+                      <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoLaboral" type="button" id="botonSaberSiEliminoSegmentoLaboral" name="btnSegmentoLaboral"> X</button>
+                      <template id="templateLaboral">
+                        <div class="border rounded p-1 border-warning" id="templateLaborales" name="templateLaboral" cbxname="cBxSegmentoLaboral">
+                          <input type="checkbox" id="checkBoxSaberSiEliminoSegmentoLaboral" name="cBxSegmentoLaboral">
+                         <!-- <button class="btn btn-outline-danger ms-3 mb-3 btn-sm descripcionBtnEliminarSegmentoLaboral" type="button" id="botonSaberSiEliminoSegmentoLaboral" name="btnSegmentoLaboral"> X</button> -->
+                          <div class="row" id="filaModalExperiencia">
+                            <div class="col" id="col1DefilaModalExperiencia">
+                              <label for="empresa" class="form-label">Empresa: </label> 
+                            </div>
+                            <div class="col" id="col2DefilaModalExperiencia">
+                              <p class="text border rounded-end border-dark" id="inputExperienciaLaboral" name="empresa" nameb="empresa">Complete aquí</p>
+                            </div>
+                          </div>
+                          <div class="row" id="filaModalExperiencia">
+                            <div class="col" id="col1DefilaModalExperiencia">
+                              <label for="tarea" class="form-label">Tarea: </label> 
+                            </div>
+                            <div class="col" id="col2DefilaModalExperiencia">
+                              <p class="text border rounded-end border-dark" id="inputExperienciaLaboral" name="tarea" nameb="tarea">Complete aquí</p>
+                            </div>
+                          </div>
+                          <div class="row" id="filaModalExperiencia">
+                            <div class="col" id="col1DefilaModalExperiencia">
+                              <label for="tarea" class="form-label">Descripción del trabajo: </label> 
+                            </div>
+                            <div class="row" id="col2DefilaModalExperiencia">
+                              <p class="text col-10 offset-1 border rounded-bottom border-dark" row="1" id="inputExperienciaLaboral" name="descripcionTrabajo" nameb="descripcionTrabajo">Complete aquí</p>
+                            </div>
+                          </div>
+                          <div class="row" id="filaModalExperiencia">
+                              <label for="fechaDesempeño" class="form-label">Fecha de desempeño: </label> 
+                              <div class="row">
+                                <div class="col">
+                                    Desde: 
+                                    <!-- <button type="button" class="botonSeleccionFechaDesde dropdown-toggle ms-1" data-bs-toggle="dropdown" aria-expanded="false"><img src="img_bootstrap/calendar3.svg"></button> -->
+                                  </div>
+                                  <div class="col">
+                                    <input type="date" class="text border-dark" id="inputExperienciaLaboral" id2="inicioFechaDesempeño" name="fechaDesempeño" nameb="fechaDesempeño" value=""
+                                      min="1900-01-01" max="3000-12-31" disabled>
+                                  </div>
+                              </div> 
+                              <div class="row">
+                                  <div class="col">
+                                    Hasta: 
+                                    <!--<button type="button" class="botonSeleccionFechaHasta dropdown-toggle ms-1" data-bs-toggle="dropdown" aria-expanded="false"><img src="img_bootstrap/calendar3.svg"></button> -->
+                                  </div>
+                                  <div class="col">
+                                    <input type="date" class="text border-dark" id="inputExperienciaLaboral" id2="finalFechaDesempeño" name="fechaDesempeño" nameb="fechaDesempeño" value=""
+                                    min="1900-01-01" max="3000-12-31" disabled>
+                                  </div>
+                              </div>
+                          </div>
+                      </div><!--Cierre filaTemplateModalExperiencia-->
+                    </template> 
+                    </div> <!--Cierre ModalBody-->
+                    <div class="modal-footer">
+                      <button class="btn btn-primary translate-middle-x botonAgregarActivo" id="btnAgregarTrabajo">
+                        Agregar trabajo
+                      </button>
+                      <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>
+                    </div><!--Cierre Modalfooter-->
+                </div>
+            </div>
+        </div><!--Cierre modalExperiencia-->
+    </div><!--Cierre Body card-->
+</div>

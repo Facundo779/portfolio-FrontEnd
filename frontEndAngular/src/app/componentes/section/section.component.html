@@ -1,5 +1,22 @@
-<app-acerca-de></app-acerca-de>
-<app-experiencia></app-experiencia>
-<app-educacion></app-educacion>
-<app-proyecto></app-proyecto>
-<app-hard-soft-skills></app-hard-soft-skills>
+<div class="container" id="container2">
+    <div class="row mt-3 col-6 offset-3" id="cerrarSesion">
+      <button class="cerrarSesion botonEdicionOculto btn-warning" type="button" id="cerrarSesion" name="botonEditar"><img src="img_bootstrap/file-earmark-lock.svg"></button>
+    </div>
+    <div class="row mt-3" id="fila3">
+      <!--Inicio de tarjeta 1-->
+      <app-acerca-de></app-acerca-de>
+    </div><!--Cierre fila3col1-->
+    <div class="col-3 tarjetaCvActivo" id="fila3col2" name="tarjetaCv">
+        <!--Inicio de tarjeta 2-->
+        <app-experiencia></app-experiencia>
+    </div><!--Cierre fila3col2-->
+    <div class="col-3 tarjetaCvActivo" id="fila3col3" name="tarjetaCv">
+        <!--Inicio de tarjeta 3-->
+        <app-educacion></app-educacion>
+    </div><!--Cierre fila3col3-->
+    <div class="col-3 tarjetaCvActivo" id="fila3col4" name="tarjetaCv">    
+        <!--Inicio de tarjeta 4-->
+        <app-proyecto></app-proyecto>
+    </div><!--Cierre fila3col4-->
+    <app-hard-soft-skills></app-hard-soft-skills>
+</div><!--Cierre Container 2-->

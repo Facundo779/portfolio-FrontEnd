@@ -1,1 +1,136 @@
-<p>acerca-de works!</p>
+<div class="col-3 tarjetaCvActivo" id="fila3col1" name="tarjetaCv">
+    <div class="card border-primary text-center" id="card1" style="width: 10rem;">
+      <div class="card-header">Acerca de</div>                
+      <img src="imagenes_frontend/seudofotoperfil.png" class="card-img-top">
+      <div class="card-body">
+          <h4 class="card-title">Facundo Gabriel Rodriguez</h4>
+          <p class="card-text">Full Stack Developer Jr</p>
+          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAceraDe">Ver más...</a>
+          <div class="modal fade" id="modalAceraDe">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h3 class="modal-title" id="datosPersonales">Datos Personales</h3>
+                          <button class="botonEditar botonEdicionOculto" type="button" id="editarDatosPersonales" name="botonEditar"><img src="img_bootstrap/pencil-square.svg"></button>
+                          <button type="button" class="btn-close" name="button" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row mt-3" id="filaNombreCompletoModalAcercaDe">
+                          <div class="col" id="col1DefilaNombreCompletoModalAcercaDe">
+                            <label for="nombreCompleto" class="form-label">Nombre Completo: </label> 
+                          </div>
+                          <div class="col" id="col2DefilaNombreCompletoModalAcercaDe">
+                            <p class="text border rounded-end border-dark" id="inputDatosPersonales" name="nombreCompleto">Complete aquí</p>
+                          </div>
+                        </div><!--Cierre filaNombreCompletoModalAcercaDe-->
+                        <div class="row mt-3" id="filaTituloModalAcercaDe">
+                          <div class="col" id="col1DefilaNacionalidadModalAcercaDe">
+                            <label for="titulo" class="form-label">Título: </label> 
+                          </div>
+                          <div class="col" id="col2DefilaTituloModalAcercaDe">
+                            <p class="text border rounded-end border-dark" id="inputDatosPersonales" name="titulo">Complete aquí</p>
+                          </div>
+                        </div><!--Cierre filaTituloModalAcercaDe-->
+                        <div class="row mt-3" id="filaTituloModalAcercaDe">
+                          <div class="col" id="col2DefilaFotoPerfilModalAcercaDe">
+                            <label for="fotoPerfil" class="form-label">Adjunte su foto de perfil:</label>
+                            <input type="file" class="form-control" id="inputDatosPersonales" name="fotoPerfil" disabled>
+                          </div>
+                        </div><!--Cierre filaFotoPerfilModalAcercaDe-->
+                        
+                        <div class="row mt-3" id="filaNacionalidadModalAcercaDe">
+                          <div class="col" id="col1DefilaNacionalidadModalAcercaDe">
+                            <label for="nacionalidad" class="form-label">Nacionalidad: </label> 
+                          </div>
+                          <div class="col" id="col2DefilaNacionalidadModalAcercaDe">
+                            <p class="text border rounded-end border-dark" id="inputDatosPersonales" name="nacionalidad">Complete aquí</p>
+                          </div>
+                        </div><!--Cierre filaNacionalidadModalAcercaDe-->
+                        <p><ins>Reside en</ins></p> <!---->
+                        <div class="row mt-3" id="filaPaisModalAcercaDe">
+                          <div class="col" id="col1DefilaPaisModalAcercaDe">
+                            <label for="pais" class="form-label">País: </label> 
+                          </div>
+                          <div class="col" id="col2DefilaPaisModalAcercaDe">
+                            <p class="text border rounded-end border-dark" id="inputDatosPersonales" name="pais">Complete aquí</p>
+                          </div>
+                        </div><!--Cierre filaPaisModalAcercaDe-->                                    
+                        <div class="row mt-3" id="filaProvinciaModalAcercaDe">
+                          <div class="col" id="col1DefilaProvinciaModalAcercaDe">
+                            <label for="provincia" class="form-label">Provincia: </label> 
+                          </div>
+                          <div class="col" id="col2DefilaProvinciaModalAcercaDe">
+                            <p class="text border rounded-end border-dark" id="inputDatosPersonales" name="provincia">Complete aquí</p>
+                          </div>
+                        </div><!--Cierre filaProvinciaModalAcercaDe-->                                    
+                        <div class="row mt-3" id="filaCiudadModalAcercaDe">
+                          <div class="col" id="col1DefilaCiudadModalAcercaDe">
+                            <label for="ciudad" class="form-label">Ciudad: </label> 
+                          </div>
+                          <div class="col" id="col2DefilaCiudadModalAcercaDe">
+                            <p class="text border rounded-end border-dark" id="inputDatosPersonales" name="ciudad">Complete aquí</p>
+                          </div>
+                        </div><!--Cierre filaCiudadModalAcercaDe-->                                    
+                        <div class="row mt-3" id="filaDirecciónModalAcercaDe">
+                          <div class="col" id="col1DefilaDirecciónModalAcercaDe">
+                            <label for="direccion" class="form-label">Dirección: </label> 
+                          </div>
+                          <div class="col" id="col2DefilaDirecciónModalAcercaDe">
+                            <p class="text border rounded-end border-dark" id="inputDatosPersonales" name="direccion">Complete aquí</p>
+                          </div>
+                        </div><!--Cierre filaDirecciónModalAcercaDe--> 
+                        <p><ins>Datos de contacto</ins></p>
+                        <div class="row mt-3" id="filaTelefonoModalAcercaDe">
+                          <div class="col" id="col1DefilaTelefonoModalAcercaDe">
+                            <label for="telefono" class="form-label">Teléfono: </label> 
+                          </div>
+                          <div class="col" id="col2DefilaTelefonoModalAcercaDe">
+                            <p class="text border rounded-end border-dark" id="inputDatosPersonales" name="telefono">Complete aquí</p>
+                          </div>
+                        </div><!--Cierre filaTelefonoModalAcercaDe-->                                                                       
+                        <div class="row mt-3" id="filaMail2ModalAcercaDe">
+                          <div class="col" id="col1DefilaMail2ModalAcercaDe">
+                            <label for="email2" class="form-label">Correo electrónico: </label> 
+                          </div>
+                          <div class="col" id="col2DefilaMail2ModalAcercaDe">
+                            <p class="text border rounded-end border-dark" id="inputDatosPersonales" name="email2">Complete aquí</p>
+                          </div>
+                        </div><!--Cierre filaMail2ModalAcercaDe-->
+                        <p><ins>Extra</ins></p>
+                        <div class="row mt-3" id="filaEdadModalAcercaDe">
+                          <div class="col" id="col1DefilaEdadModalAcercaDe">
+                            <label for="edad" class="form-label">Edad: </label> 
+                          </div>
+                          <div class="col" id="col2DefilaMail2ModalAcercaDe">
+                            <p class="text border rounded-end border-dark" id="inputDatosPersonales" name="edad">Complete aquí</p>
+                          </div>
+                        </div><!--Cierre filaEdadModalAcercaDe-->
+                        <div class="row mt-3" id="filaFechaDeNacimientoModalAcercaDe">
+                          <div class="col" id="col1DefilaMail2ModalAcercaDe">
+                            <label for="fechaNacimiento" class="form-label">Fecha De Nacimiento: </label> 
+                          </div>
+                          <div class="col" id="col2DefilaFechaDeNacimientoModalAcercaDe">
+                            <p class="text border rounded-end border-dark" id="inputDatosPersonales" name="fechaNacimiento">Complete aquí</p>
+                          </div>
+                        </div><!--Cierre filaFechaDeNacimientoModalAcercaDe-->
+                        <div class="row mt-3" id="filaDocIdentidadModalAcercaDe">
+                          <div class="col" id="col1DefilaMail2ModalAcercaDe">
+                            <label for="docIdentidad" class="form-label">Documento de Identidad: </label> 
+                          </div>
+                          <div class="col" id="col2DefilaDocIdentidadModalAcercaDe">
+                            <p class="text border rounded-end border-dark" id="inputDatosPersonales" name="docIdentidad">Complete aquí</p>
+                          </div>
+                        </div><!--Cierre filaDocIdentidadModalAcercaDe-->
+                        <div class="mt-3">
+                          <label for="datosPertinentes" class="form-label">Incluya aquellos datos que crea pertinentes y cuente brevemente sobre Usted.</label>
+                          <p class="text border rounded-bottom border-dark" rows="1" id="inputDatosPersonales" name="datosPertinentes">Complete aquí</p>
+                        </div><!--Cierre del área de texto1-->                                                                       
+                      </div> <!--Cierre ModalBody-->
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-success" name="button" data-bs-dismiss="modal">Cerrar</button>
+                      </div>
+                  </div>
+              </div>
+          </div><!--Cierre modalAceraDe-->
+      </div><!--Cierre Body card-->
+  </div>
