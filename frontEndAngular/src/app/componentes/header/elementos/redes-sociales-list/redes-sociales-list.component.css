@@ -1,0 +1,6 @@
+/*Estilos de botones para redes sociales*/
+.btn_RedesSociales:hover::before{
+    content: "Redes Sociales";
+    white-space: nowrap;
+    margin-left: 3%;
+ }

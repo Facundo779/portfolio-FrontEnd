@@ -1,1 +1,63 @@
-<p>registro-usuario works!</p>
+<div class="mt-3"> 
+    <!-- Button trigger modal -->
+    <button type="button" class="btn_Registro btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalRegistroUsuario">
+      <!-- <img src="img_bootstrap/list-check.svg"> -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-check" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+      </svg>
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="modalRegistroUsuario" tabindex="-1" aria-labelledby="modalRegistroUsuarioLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" style="">
+            <h5 class="modal-title" id="modalRegistroUsuarioLabel">Ingrese los datos solicitados</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="modalBodyRegistro" style="background-color:black;">
+            <form id="formRegistro" action="">
+              <div class="row input-group"><!--Nombre-->
+                  <label for="nombre" class="form-label"></label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+                  <input class="form-check-input m-3 rounded-circle iconoValidacion_neutral" type="checkbox" id="checkBox1">
+                  <p id="mnsjAlert1" class="mensajeAtencionOculto" style="color:white;">No usar números ni simbolos</p>
+              </div>
+              <div class="row input-group"><!--Apellido-->
+                <label for="apellido" class="form-label"></label>
+                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+                <input class="form-check-input m-3 rounded-circle iconoValidacion_neutral" type="checkbox" id="checkBox2">
+                <p id="mnsjAlert2" class="mensajeAtencionOculto" style="color:white;">No usar números ni simbolos</p>
+              </div>
+              <div class="row input-group"><!--Nombre de Usuario-->
+                <label for="nombreDeUsuario" class="form-label"></label>
+                <input type="text" class="form-control" id="nombreDeUsuario" name="nombreDeUsuario" placeholder="Nombre de Usuario">
+                <input class="form-check-input m-3 rounded-circle iconoValidacion_neutral" type="checkbox" id="checkBox3">
+                <p id="mnsjAlert3" class="mensajeAtencionOculto" style="color:white;">Emplear de 9 a 30 caracteres</p>
+              </div>
+              <div class="row input-group"><!--Correo electrónico-->
+                <label for="correoElectronico" class="form-label"></label>
+                <input type="text" class="form-control" id="correoElectronico" name="correoElectronico" placeholder="Correo electrónico">
+                <input class="form-check-input m-3 rounded-circle iconoValidacion_neutral" type="checkbox" id="checkBox4">
+                <p id="mnsjAlert4" class="mensajeAtencionOculto" style="color:white;">No puede tener espacios</p>
+              </div>
+              <div class="row input-group"><!--Contraseña-->
+                <label for="clave1" class="form-label"></label>
+                <input type="password" class="form-control" id="clave1" name="clave1" placeholder="Contraseña">
+                <input class="form-check-input m-3 rounded-circle iconoValidacion_neutral" type="checkbox" id="checkBox5">
+                <p id="mnsjAlert5" class="mensajeAtencionOculto" style="color:white;">Mínimo de 9 caracteres</p>
+              </div>    
+              <div class="row input-group"><!--Comprobar Contraseña-->
+                <label for="clave2" class="form-label"></label>
+                <input type="password" class="form-control" id="clave2" name="clave2" placeholder="Reitere Contraseña">
+                <input class="form-check-input m-3 rounded-circle iconoValidacion_neutral" type="checkbox" id="checkBox6">
+                <p id="mnsjAlert6" class="mensajeAtencionOculto" style="color:white;">LA CONSTRASEÑA DEBE SER IDÉNTICA. Mínimo de 9 caracteres</p>
+              </div>
+              <div class="modal-footer" style="">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button submit" class="btn btn-success">Crear</button>
+              </div>
+            </form><!--Fin de Formulario Registro-->
+        </div> <!--Fin modal-body-->
+      </div>
+    </div>
+  </div>

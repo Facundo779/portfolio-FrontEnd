@@ -1,3 +1,32 @@
-<app-inicio-sesion></app-inicio-sesion>
-<app-redes-sociales-list></app-redes-sociales-list>
-<app-registro-usuario></app-registro-usuario>
+<div class="container" id="container1">
+    <div class="row" id="fila1">
+        
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3" id="headerCol1" style="">
+              <img src="assets/imagenes_frontend_angular/banner-ok-argentina-programa (2).jpg" class="img-fluid" width="100%">
+            </div> <!--Cierre de columna id=headerCol1-->
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 text-center m-auto rounded-pill" id="headerCol2" style="background-color:orange;">
+              #YoProgramo
+            </div> <!--Cierre de columna id=headerCol2-->
+            
+            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2" id="headerCol3" style="">
+                <!--Lista desplegable de redes sociales-->
+                <app-redes-sociales-list></app-redes-sociales-list>
+                <!--Cierre de lista desplegable de redes sociales-->
+            </div><!--Cierre de columna id=headerCol3-->
+            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2" id="headerCol5" style="">
+                <!--Dropdown form e inicio de sesión-->
+                <app-inicio-sesion></app-inicio-sesion>
+                <!--Fin del dropdown form e Inicio de sesión-->
+            </div><!--Cierre de columna id=headerCol5-->    
+            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2" id="headerCol6" style="">
+                <!--Inicio del Botón registrarse-->
+                <app-registro-usuario></app-registro-usuario>
+                <!--Cierre del botón registrarse-->
+            </div><!--Cierre de columna id=headerCol6--> 
+    </div><!--Cierre de la fila 1-->
+    <div class="row" id="fila2">
+        <div class="col-8 offset-2 mt-3" style="">
+          <img src="assets/imagenes_frontend_angular/bannerfacundo.png" id="img2" class="img-fluid">
+        </div>          
+    </div><!--Cierre de fila2-->
+  </div> <!--Cierre Container1-->    

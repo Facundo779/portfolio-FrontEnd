@@ -1,0 +1,9 @@
+/*Estilo de formulario para inicio de sesión*/
+#formInicioSesion{
+    width: 20   rem;
+ }
+ .btn_InicioSesion:hover::before{
+    content: "Iniciar Sesión";
+    white-space: nowrap;
+    margin-left: 3%;
+ }
