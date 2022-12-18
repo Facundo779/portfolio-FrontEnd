@@ -1,0 +1,14 @@
+.agregarFotoProyectoOculto{
+    display: none;
+ }
+ .agregarFotoProyectoActivo{
+    display: block;
+ }
+ .descripcionBtnOcultar:hover::before{
+    content: "Ocultar carga de foto";
+    white-space: nowrap;
+ }
+ .descripcionBtnEliminarSegmentoProyecto:hover::before{
+   content: "Eliminar proyecto seleccionados";
+   white-space: nowrap;
+}

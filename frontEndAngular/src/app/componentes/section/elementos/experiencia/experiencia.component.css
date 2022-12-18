@@ -1,0 +1,10 @@
+.descripcionBtnEliminarSegmentoLaboral:hover::before{
+    content: "Eliminar trabajos seleccionados";
+    white-space: nowrap;
+ }
+ .habilitarTituloProfesionalOculto{
+    display: none;
+ }
+ .habilitarTituloProfesionalActivo{
+    display: block;
+ }

@@ -111,12 +111,14 @@ a .githubsvg {
 }
 
 /*Modals del curriculum*/
+/*
 .tarjetaCvOculto{
    display:none;
 }
 .tarjetaCvActivo{
    display:block;
-}
+} */
+
 /*Botones de edición*/
 .botonEdicionOculto{
    display:none;
@@ -124,12 +126,13 @@ a .githubsvg {
 .botonEdicionActivo{
    display:block;
 }
+/*
 .formDropdownOculto{
    display:none;
 }
 .formDropdownActivo{
    display:block;
-}
+}*/
 .cerrarSesion:hover::after{
    content: "Cerrar Sesión";
    white-space: nowrap;
@@ -143,12 +146,13 @@ a .githubsvg {
    
 }
 /*Edición del contenido de las tarjetas*/
+/*
 .inputEdicionDeSeccionesOculto{
    display:none;
 }
 .inputEdicionDeSeccionesActivo{
    display:block;
-}
+} */
 .botonAgregarOculto{
    display:none;
 }

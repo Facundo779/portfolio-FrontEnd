@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+/*Botones de edición*/
+.botonEdicionOculto{
+    display:none;
+ }
+ .botonEdicionActivo{
+    display:block;
+ }
+ .cerrarSesion:hover::after{
+    content: "Cerrar Sesión";
+    white-space: nowrap;
+    margin-left: 3%;
+    
+ }
+ .botonEditar:hover::after{
+    content: "Editar sección";
+    white-space: nowrap;
+    margin-left: 3%;
+    
+ }
+ .botonAgregarOculto{
+    display:none;
+ }
+ .botonAgregarActivo{
+    display:block;
+ }
+ /*Estilos de modals*/
+.modal-header{
+    background-color: orange;
+ }
+ .modal-footer{
+    background-color: rgb(73, 12, 114);
+ }
+ #inputDatosPersonales{
+    background-color: white;
+ }

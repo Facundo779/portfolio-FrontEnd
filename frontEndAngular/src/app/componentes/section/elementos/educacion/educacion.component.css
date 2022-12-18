@@ -1,0 +1,4 @@
+.descripcionBtnEliminarSegmentoEducacion:hover::before{
+    content: "Eliminar estudio seleccionados";
+    white-space: nowrap;
+ }
